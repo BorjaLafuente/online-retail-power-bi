@@ -74,13 +74,49 @@ table Sales
 
 		annotation SummarizationSetBy = Automatic
 
+	column TransactionType
+		dataType: string
+		lineageTag: 47b4ded9-8baf-4250-9009-133630678ebb
+		summarizeBy: none
+		sourceColumn: TransactionType
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsProduct
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: cc4d1672-a25a-45ff-a4fd-1121f0eeba31
+		summarizeBy: none
+		sourceColumn: IsProduct
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsValidSale
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: f5553ef4-ada3-4bf8-b287-5935e2d6f754
+		summarizeBy: none
+		sourceColumn: IsValidSale
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Sales = m
 		mode: import
 		source =
 				let
-				  Origen = Table.Combine({#"Year 2009-2010", #"Year 2010-2011"})
+				  Origen = Table.Combine({#"Year 2009-2010", #"Year 2010-2011"}),
+				  #"Add TransactionType" = Table.AddColumn(Origen, "TransactionType", each if Text.StartsWith([Invoice], "C") then "Cancellation" else if Text.StartsWith([Invoice], "A") then "Adjustment" else "Sale"),
+				  #"Tipo de columna cambiado" = Table.TransformColumnTypes(#"Add TransactionType", {{"TransactionType", type text}}),
+				  #"Add IsProduct" = Table.TransformColumnTypes(Table.AddColumn(#"Tipo de columna cambiado", "IsProduct", each not List.Contains(
+				    {"POST", "DOT", "C2", "C3", "M", "m", "D", "S",
+				     "BANK CHARGES", "AMAZONFEE", "CRUK",
+				     "ADJUST", "ADJUST2", "B", "TEST001", "TEST002", "GIFT"},
+				    [StockCode]
+				)
+				and not Text.StartsWith([StockCode], "gift_")), {{"IsProduct", type logical}}),
+				  #"Add IsValidSale" = Table.TransformColumnTypes(Table.AddColumn(#"Add IsProduct", "IsValidSale", each [TransactionType] = "Sale" and [IsProduct] and [Price] > 0), {{"IsValidSale", type logical}})
 				in
-				  Origen
+				  #"Add IsValidSale"
 
 	annotation PBI_ResultType = Table
 
