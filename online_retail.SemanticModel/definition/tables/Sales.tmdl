@@ -1,0 +1,86 @@
+table Sales
+	lineageTag: fba3a2fe-6f06-479a-a802-c05e89b6ec49
+
+	column Invoice
+		dataType: string
+		lineageTag: 5de97970-f817-494e-abfd-706af94978bf
+		summarizeBy: none
+		sourceColumn: Invoice
+
+		annotation SummarizationSetBy = Automatic
+
+	column StockCode
+		dataType: string
+		lineageTag: 0a0df8bd-61cf-4987-958e-895f82ab0a38
+		summarizeBy: none
+		sourceColumn: StockCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: 9afc83b2-c52f-47ee-a1a1-3ed58aca4719
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quantity
+		dataType: int64
+		formatString: 0
+		lineageTag: 2ee6c4e5-482e-40bc-a152-d37f5572f7df
+		summarizeBy: sum
+		sourceColumn: Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column InvoiceDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: df30cb97-c55d-417c-a963-405a836ac314
+		summarizeBy: none
+		sourceColumn: InvoiceDate
+
+		variation Variación
+			isDefault
+			relationship: 22f423c9-c87a-44b9-982e-75d5e328ae2a
+			defaultHierarchy: LocalDateTable_c5fa4d1a-10a5-4626-be4c-d028e21984bd.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Price
+		dataType: double
+		lineageTag: 9d7bd07b-9d27-4e43-853c-6cc2980a981f
+		summarizeBy: sum
+		sourceColumn: Price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Customer ID'
+		dataType: string
+		lineageTag: ddecb5ee-8847-46ea-aabe-b5bdc226f5dd
+		summarizeBy: none
+		sourceColumn: Customer ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: 84f1040b-60f4-456d-86e3-f73d94022767
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Sales = m
+		mode: import
+		source =
+				let
+				  Origen = Table.Combine({#"Year 2009-2010", #"Year 2010-2011"})
+				in
+				  Origen
+
+	annotation PBI_ResultType = Table
+

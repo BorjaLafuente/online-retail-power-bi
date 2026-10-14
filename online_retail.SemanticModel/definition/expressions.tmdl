@@ -1,0 +1,25 @@
+expression 'Year 2009-2010' =
+		let
+		  Origen = Excel.Workbook(File.Contents("C:\Users\Usuario\Documents\github\online-retail-power-bi\data\online_retail_II.xlsx"), null, true),
+		  #"Navegación 1" = Origen{[Item = "Year 2009-2010", Kind = "Sheet"]}[Data],
+		  #"Encabezados promovidos" = Table.PromoteHeaders(#"Navegación 1", [PromoteAllScalars = true]),
+		  #"Tipo de columna cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos", {{"Description", type text}, {"Quantity", Int64.Type}, {"InvoiceDate", type datetime}, {"Price", type number}, {"Customer ID", type text}, {"Country", type text}, {"Invoice", type text}, {"StockCode", type text}}, "es"),
+		  #"Remove week duplicated in next sheet" = Table.SelectRows(#"Tipo de columna cambiado", each [InvoiceDate] < #datetime(2010, 12, 1, 0, 0, 0))
+		in
+		  #"Remove week duplicated in next sheet"
+	lineageTag: e6efd4a5-3480-471b-b5ae-d433ce439c94
+
+	annotation PBI_ResultType = Table
+
+expression 'Year 2010-2011' =
+		let
+		  Origen = Excel.Workbook(File.Contents("C:\Users\Usuario\Documents\github\online-retail-power-bi\data\online_retail_II.xlsx"), null, true),
+		  #"Navegación 1" = Origen{[Item = "Year 2010-2011", Kind = "Sheet"]}[Data],
+		  #"Encabezados promovidos" = Table.PromoteHeaders(#"Navegación 1", [PromoteAllScalars = true]),
+		  #"Tipo de columna cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos", {{"Description", type text}, {"Quantity", Int64.Type}, {"InvoiceDate", type datetime}, {"Price", type number}, {"Customer ID", type text}, {"Country", type text}, {"Invoice", type text}, {"StockCode", type text}}, "es")
+		in
+		  #"Tipo de columna cambiado"
+	lineageTag: 556d4bcb-8350-4218-bb53-cf388dc03f14
+
+	annotation PBI_ResultType = Table
+
