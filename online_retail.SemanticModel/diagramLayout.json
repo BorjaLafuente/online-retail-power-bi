@@ -10,13 +10,39 @@
       "nodes": [
         {
           "location": {
-            "x": 0,
+            "x": 568,
             "y": 0
           },
           "nodeIndex": "Sales",
           "nodeLineageTag": "fba3a2fe-6f06-479a-a802-c05e89b6ec49",
           "size": {
             "height": 272,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 72
+          },
+          "nodeIndex": "Customer",
+          "nodeLineageTag": "9d863363-1683-464a-b267-cac7e000df83",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 284,
+            "y": 72
+          },
+          "nodeIndex": "Product",
+          "nodeLineageTag": "b9c291be-4649-41ff-935e-2638d3bbb187",
+          "size": {
+            "height": 128,
             "width": 234
           },
           "zIndex": 0

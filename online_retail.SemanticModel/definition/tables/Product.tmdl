@@ -1,0 +1,32 @@
+table Product
+	lineageTag: b9c291be-4649-41ff-935e-2638d3bbb187
+
+	column StockCode
+		dataType: string
+		lineageTag: 12455fac-67ca-4ee5-8964-43c10b047b74
+		summarizeBy: none
+		sourceColumn: StockCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: d7d15c21-78be-4fb3-89e8-5ac76b6f6860
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Product = m
+		mode: import
+		source =
+				let
+				  Origen = Sales,
+				  #"Filas filtradas" = Table.SelectRows(Origen, each ([IsValidSale] = true)),
+				  #"Elegir columnas" = Table.SelectColumns(#"Filas filtradas", {"StockCode", "Description", "InvoiceDate"}),
+				  #"Latest description per product" = Table.Group(#"Elegir columnas", {"StockCode"}, {{"Description", each Table.Max(_, "InvoiceDate")[Description], type text}})
+				in
+				  #"Latest description per product"
+
+	annotation PBI_ResultType = Table
+

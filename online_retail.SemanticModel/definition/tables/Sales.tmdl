@@ -41,11 +41,6 @@ table Sales
 		summarizeBy: none
 		sourceColumn: InvoiceDate
 
-		variation Variación
-			isDefault
-			relationship: 22f423c9-c87a-44b9-982e-75d5e328ae2a
-			defaultHierarchy: LocalDateTable_c5fa4d1a-10a5-4626-be4c-d028e21984bd.'Jerarquía de fechas'
-
 		annotation SummarizationSetBy = Automatic
 
 	column Price
