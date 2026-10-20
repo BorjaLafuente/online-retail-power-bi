@@ -11,17 +11,23 @@ table Sales
 
 	column StockCode
 		dataType: string
+		isHidden
 		lineageTag: 0a0df8bd-61cf-4987-958e-895f82ab0a38
 		summarizeBy: none
 		sourceColumn: StockCode
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 	column Description
 		dataType: string
+		isHidden
 		lineageTag: 9afc83b2-c52f-47ee-a1a1-3ed58aca4719
 		summarizeBy: none
 		sourceColumn: Description
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -55,9 +61,12 @@ table Sales
 
 	column 'Customer ID'
 		dataType: string
+		isHidden
 		lineageTag: ddecb5ee-8847-46ea-aabe-b5bdc226f5dd
 		summarizeBy: none
 		sourceColumn: Customer ID
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -95,12 +104,28 @@ table Sales
 
 		annotation SummarizationSetBy = Automatic
 
+	column Date
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 4b10060c-fe00-4be2-8065-77973a6baaf3
+		summarizeBy: none
+		sourceColumn: Date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
 	partition Sales = m
 		mode: import
 		source =
 				let
 				  Origen = Table.Combine({#"Year 2009-2010", #"Year 2010-2011"}),
-				  #"Add TransactionType" = Table.AddColumn(Origen, "TransactionType", each if Text.StartsWith([Invoice], "C") then "Cancellation" else if Text.StartsWith([Invoice], "A") then "Adjustment" else "Sale"),
+				  #"Uppercase StockCode" = Table.TransformColumns(Origen, {{"StockCode", each Text.Upper(_), type nullable text}}),
+				  #"Trim StockCode" = Table.TransformColumns(#"Uppercase StockCode", {{"StockCode", each Text.Trim(_), type nullable text}}),
+				  #"Add TransactionType" = Table.AddColumn(#"Trim StockCode", "TransactionType", each if Text.StartsWith([Invoice], "C") then "Cancellation" else if Text.StartsWith([Invoice], "A") then "Adjustment" else "Sale"),
 				  #"Tipo de columna cambiado" = Table.TransformColumnTypes(#"Add TransactionType", {{"TransactionType", type text}}),
 				  #"Add IsProduct" = Table.TransformColumnTypes(Table.AddColumn(#"Tipo de columna cambiado", "IsProduct", each not List.Contains(
 				    {"POST", "DOT", "C2", "C3", "M", "m", "D", "S",
@@ -108,10 +133,11 @@ table Sales
 				     "ADJUST", "ADJUST2", "B", "TEST001", "TEST002", "GIFT"},
 				    [StockCode]
 				)
-				and not Text.StartsWith([StockCode], "gift_")), {{"IsProduct", type logical}}),
-				  #"Add IsValidSale" = Table.TransformColumnTypes(Table.AddColumn(#"Add IsProduct", "IsValidSale", each [TransactionType] = "Sale" and [IsProduct] and [Price] > 0), {{"IsValidSale", type logical}})
+				and not Text.StartsWith([StockCode], "GIFT_")), {{"IsProduct", type logical}}),
+				  #"Add IsValidSale" = Table.TransformColumnTypes(Table.AddColumn(#"Add IsProduct", "IsValidSale", each [TransactionType] = "Sale" and [IsProduct] and [Price] > 0), {{"IsValidSale", type logical}}),
+				  #"Add Date" = Table.AddColumn(#"Add IsValidSale", "Date", each DateTime.Date([InvoiceDate]), type nullable date)
 				in
-				  #"Add IsValidSale"
+				  #"Add Date"
 
 	annotation PBI_ResultType = Table
 

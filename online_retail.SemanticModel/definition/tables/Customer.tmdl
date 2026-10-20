@@ -9,11 +9,11 @@ table Customer
 
 		annotation SummarizationSetBy = Automatic
 
-	column Country
+	column 'Customer Country'
 		dataType: string
 		lineageTag: d205b405-8144-4306-be42-2eb1f0383c7c
 		summarizeBy: none
-		sourceColumn: Country
+		sourceColumn: Customer Country
 
 		annotation SummarizationSetBy = Automatic
 
@@ -24,9 +24,10 @@ table Customer
 				  Origen = Sales,
 				  #"Filas filtradas" = Table.SelectRows(Origen, each ([IsValidSale] = true) and ([Customer ID] <> null and [Customer ID] <> "")),
 				  #"Elegir columnas" = Table.SelectColumns(#"Filas filtradas", {"InvoiceDate", "Customer ID", "Country"}),
-				  #"Latest country per customer" = Table.Group(#"Elegir columnas", {"Customer ID"}, {{"Country", each Table.Max(_, "InvoiceDate")[Country], type text}})
+				  #"Latest country per customer" = Table.Group(#"Elegir columnas", {"Customer ID"}, {{"Country", each Table.Max(_, "InvoiceDate")[Country], type text}}),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Latest country per customer",{{"Country", "Customer Country"}})
 				in
-				  #"Latest country per customer"
+				  #"Columnas con nombre cambiado"
 
 	annotation PBI_ResultType = Table
 

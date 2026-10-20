@@ -1,0 +1,90 @@
+table Calendar
+	lineageTag: 54f7aaad-a180-43b8-bfb9-33545bb904de
+	dataCategory: Time
+
+	column Date
+		isKey
+		formatString: yyyy-mm-dd
+		lineageTag: 65afd6b3-82b9-451c-a00d-70c2ade80bc0
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column Year
+		formatString: 0
+		lineageTag: 97c17446-f371-4849-9cf6-a060d83fc7e4
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Year]
+
+		annotation SummarizationSetBy = User
+
+	column 'Month Number'
+		formatString: 0
+		lineageTag: b7d5fb79-6ded-41d5-966b-c7bf249dd889
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Month Number]
+
+		annotation SummarizationSetBy = User
+
+	column Month
+		lineageTag: e57c281a-605c-4243-a2b7-5f1012e0605d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Month]
+		sortByColumn: 'Month Number'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year Month'
+		lineageTag: 9153fa42-44a7-4470-9059-1ef5ab88878f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Year Month]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Weekday Number'
+		formatString: 0
+		lineageTag: 7a6eecc5-13a6-46f3-8973-8d01e3e4f8be
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Weekday Number]
+
+		annotation SummarizationSetBy = User
+
+	column Weekday
+		lineageTag: ed92bfb0-6702-4b2a-97a8-92b2a2703be9
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Weekday]
+		sortByColumn: 'Weekday Number'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Calendar = calculated
+		mode: import
+		source =
+				
+				VAR FirstYear = YEAR ( MIN ( Sales[Date] ) )
+				VAR LastYear  = YEAR ( MAX ( Sales[Date] ) )
+				RETURN
+				    ADDCOLUMNS (
+				        CALENDAR ( DATE ( FirstYear, 1, 1 ), DATE ( LastYear, 12, 31 ) ),
+				        "Year", YEAR ( [Date] ),
+				        "Month Number", MONTH ( [Date] ),
+				        "Month", FORMAT ( [Date], "mmm", "en-GB" ),
+				        "Year Month", FORMAT ( [Date], "yyyy-mm" ),
+				        "Weekday Number", WEEKDAY ( [Date], 2 ),
+				        "Weekday", FORMAT ( [Date], "ddd", "en-GB" )
+				    )
+
+	annotation PBI_Id = 17e25e6d1a9541b5b3e5fabe220c2105
+

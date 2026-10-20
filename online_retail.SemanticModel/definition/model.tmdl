@@ -9,13 +9,14 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 0
 
-annotation PBI_ProTooling = ["DevMode"]
+annotation PBI_ProTooling = ["DevMode","DaxQueryView_Desktop"]
 
 annotation PBI_QueryOrder = ["Year 2009-2010","Year 2010-2011","Sales","Product","Customer"]
 
 ref table Sales
 ref table Product
 ref table Customer
+ref table Calendar
 
 ref cultureInfo es-ES
 

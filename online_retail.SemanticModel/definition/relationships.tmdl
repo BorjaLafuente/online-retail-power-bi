@@ -2,3 +2,11 @@ relationship AutoDetected_7a4f3891-cc63-4397-b3f1-99db0d48cbf5
 	fromColumn: Sales.'Customer ID'
 	toColumn: Customer.'Customer ID'
 
+relationship b82b9514-4c90-9136-f4da-556ec89b473e
+	fromColumn: Sales.StockCode
+	toColumn: Product.StockCode
+
+relationship 1368d87a-13c0-6746-b9d5-bd05f30707a2
+	fromColumn: Sales.Date
+	toColumn: Calendar.Date
+

@@ -1,0 +1,11 @@
+EVALUATE
+ROW (
+    "Valid sales without product",
+        COUNTROWS ( FILTER ( Sales, Sales[IsValidSale] && ISBLANK ( RELATED ( Product[StockCode] ) ) ) ),
+    "Valid sales with unknown customer",
+        COUNTROWS ( FILTER ( Sales, Sales[IsValidSale] && NOT ISBLANK ( Sales[Customer ID] ) && ISBLANK ( RELATED ( Customer[Customer ID] ) ) ) ),
+    "Lines without date",
+        COUNTROWS ( FILTER ( Sales, ISBLANK ( RELATED ( Calendar[Date] ) ) ) ),
+    "Cancelled product lines without product",
+        COUNTROWS ( FILTER ( Sales, Sales[TransactionType] = "Cancellation" && Sales[IsProduct] && ISBLANK ( RELATED ( Product[StockCode] ) ) ) )
+)
