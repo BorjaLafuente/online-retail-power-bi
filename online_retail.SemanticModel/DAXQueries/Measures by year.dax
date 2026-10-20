@@ -1,0 +1,9 @@
+EVALUATE
+SUMMARIZECOLUMNS (
+    Calendar[Year],
+    "Revenue", [Revenue],
+    "Orders", [Orders],
+    "Units", [Units],
+    "AOV", [Average Order Value],
+    "Customers", [Customers]
+)
