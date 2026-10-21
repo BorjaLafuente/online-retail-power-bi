@@ -1,0 +1,19 @@
+EVALUATE
+SUMMARIZECOLUMNS (
+    Calendar[Year],
+    "Revenue", [Revenue],
+    "Revenue PY", [Revenue PY],
+    "YoY", [Revenue YoY],
+    "YoY %", [Revenue YoY %],
+    "YTD", [Revenue YTD]
+)
+
+EVALUATE
+SUMMARIZECOLUMNS (
+    Calendar[Year Month],
+    "Revenue", [Revenue],
+    "Revenue PY", [Revenue PY],
+    "YoY %", [Revenue YoY %],
+    "YTD", [Revenue YTD]
+)
+ORDER BY Calendar[Year Month]

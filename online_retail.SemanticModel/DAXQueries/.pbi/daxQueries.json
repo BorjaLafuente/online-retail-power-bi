@@ -2,7 +2,9 @@
   "version": "1.0.0",
   "tabOrder": [
     "Model checks",
-    "Measures by year"
+    "Measures by year",
+    "Time intelligence checks",
+    "Largest lines"
   ],
-  "defaultTab": "Measures by year"
+  "defaultTab": "Time intelligence checks"
 }

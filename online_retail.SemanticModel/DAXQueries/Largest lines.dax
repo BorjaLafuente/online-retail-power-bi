@@ -1,0 +1,17 @@
+EVALUATE
+TOPN (
+    10,
+    SELECTCOLUMNS (
+        FILTER ( Sales, Sales[IsProduct] ),
+        "Invoice", Sales[Invoice],
+        "Date", Sales[InvoiceDate],
+        "StockCode", Sales[StockCode],
+        "Description", Sales[Description],
+        "Quantity", Sales[Quantity],
+        "Price", Sales[Price],
+        "Customer", Sales[Customer ID],
+        "Amount", Sales[Quantity] * Sales[Price]
+    ),
+    ABS ( [Amount] ), DESC
+)
+ORDER BY [Amount] DESC

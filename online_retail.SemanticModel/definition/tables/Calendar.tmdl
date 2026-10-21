@@ -69,6 +69,16 @@ table Calendar
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Date With Sales'
+		isHidden
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 0d6d6d8c-9255-49dd-a802-de698dcf26ad
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date With Sales]
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Calendar = calculated
 		mode: import
 		source =
@@ -83,7 +93,8 @@ table Calendar
 				        "Month", FORMAT ( [Date], "mmm", "en-GB" ),
 				        "Year Month", FORMAT ( [Date], "yyyy-mm" ),
 				        "Weekday Number", WEEKDAY ( [Date], 2 ),
-				        "Weekday", FORMAT ( [Date], "ddd", "en-GB" )
+				        "Weekday", FORMAT ( [Date], "ddd", "en-GB" ),
+				        "Date With Sales", [Date] <= MAX ( Sales[Date] )
 				    )
 
 	annotation PBI_Id = 17e25e6d1a9541b5b3e5fabe220c2105

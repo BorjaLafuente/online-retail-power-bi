@@ -1,12 +1,7 @@
 table _Measures
 	lineageTag: e4bb016c-c404-4982-9ab3-212c97a2127e
 
-	measure Revenue =
-			
-			CALCULATE (
-			    SUMX ( Sales, Sales[Quantity] * Sales[Price] ),
-			    Sales[IsValidSale] = TRUE ()
-			)
+	measure Revenue = [Gross Revenue] - [Returns]
 		formatString: "£"#,0;-"£"#,0;"£"#,0
 		lineageTag: 40708f14-81f8-41da-97a2-9f1d801ae95f
 
@@ -46,6 +41,86 @@ table _Measures
 			)
 		formatString: #,0
 		lineageTag: 4f43b317-1ff8-4f1e-a472-56921f75c4cc
+
+	measure 'Revenue PY' =
+			
+			VAR PeriodPY =
+			    CALCULATETABLE (
+			        SAMEPERIODLASTYEAR ( Calendar[Date] ),
+			        Calendar[Date With Sales] = TRUE ()
+			    )
+			VAR FirstSalesDate =
+			    CALCULATE ( MIN ( Sales[Date] ), REMOVEFILTERS () )
+			RETURN
+			    IF (
+			        MINX ( PeriodPY, Calendar[Date] ) >= FirstSalesDate,
+			        CALCULATE ( [Revenue], PeriodPY )
+			    )
+		formatString: "£"#,0;-"£"#,0;"£"#,0
+		lineageTag: 64a734ba-abf2-4333-b265-52d3c5abc945
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	measure 'Revenue YoY' =
+			
+			VAR CurrentRevenue = [Revenue]
+			VAR PreviousRevenue = [Revenue PY]
+			RETURN
+			    IF (
+			        NOT ISBLANK ( CurrentRevenue ) && NOT ISBLANK ( PreviousRevenue ),
+			        CurrentRevenue - PreviousRevenue
+			    )
+		formatString: "£"#,0;-"£"#,0;"£"#,0
+		lineageTag: 5bb59a56-0fd8-4f2d-83e6-e7cfb7e7c9c4
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	measure 'Revenue YoY %' =
+			
+			DIVIDE ( [Revenue YoY], [Revenue PY] )
+		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		lineageTag: 638c0224-1164-4f3b-bb16-c2241371cde1
+
+	measure 'Revenue YTD' =
+			
+			CALCULATE (
+			    [Revenue],
+			    DATESYTD ( Calendar[Date] )
+			)
+		formatString: "£"#,0;-"£"#,0;"£"#,0
+		lineageTag: 67dbbedd-f31f-4cfe-9835-eb5edb45707c
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	measure 'Gross Revenue' =
+			
+			CALCULATE (
+			    SUMX ( Sales, Sales[Quantity] * Sales[Price] ),
+			    Sales[IsValidSale] = TRUE ()
+			)
+		formatString: "£"#,0;-"£"#,0;"£"#,0
+		lineageTag: 8f18577f-9399-4425-a9b5-3b0fd5ae71f3
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	measure Returns =
+			
+			CALCULATE (
+			    - SUMX ( Sales, Sales[Quantity] * Sales[Price] ),
+			    Sales[TransactionType] = "Cancellation",
+			    Sales[IsProduct] = TRUE ()
+			)
+		formatString: "£"#,0;-"£"#,0;"£"#,0
+		lineageTag: 08976a6c-07bc-42b5-b876-c8b9bc5122a3
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	measure 'Return Rate' =
+			
+			DIVIDE ( [Returns], [Gross Revenue] )
+		lineageTag: 94896189-5b90-4810-94a1-78d0e2d07466
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	partition _Measures = m
 		mode: import
