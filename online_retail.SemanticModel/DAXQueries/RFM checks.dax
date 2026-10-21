@@ -1,0 +1,44 @@
+EVALUATE
+ROW (
+    "Customers", COUNTROWS ( Customer ),
+    "Recency min", MIN ( Customer[Recency] ),
+    "Recency median", MEDIAN ( Customer[Recency] ),
+    "Recency max", MAX ( Customer[Recency] ),
+    "Frequency median", MEDIAN ( Customer[Frequency] ),
+    "Frequency max", MAX ( Customer[Frequency] ),
+    "Customers with 1 order", COUNTROWS ( FILTER ( Customer, Customer[Frequency] = 1 ) ),
+    "Monetary median", MEDIAN ( Customer[Monetary] ),
+    "Monetary max", MAX ( Customer[Monetary] ),
+    "Customers with net <= 0", COUNTROWS ( FILTER ( Customer, Customer[Monetary] <= 0 ) )
+)
+
+EVALUATE
+SUMMARIZECOLUMNS ( Customer[R Score], "Customers", COUNTROWS ( Customer ) )
+ORDER BY Customer[R Score]
+
+EVALUATE
+SUMMARIZECOLUMNS ( Customer[F Score], "Customers", COUNTROWS ( Customer ) )
+ORDER BY Customer[F Score]
+
+EVALUATE
+SUMMARIZECOLUMNS ( Customer[M Score], "Customers", COUNTROWS ( Customer ) )
+ORDER BY Customer[M Score]
+
+EVALUATE
+SUMMARIZECOLUMNS (
+    Customer[F Score],
+    "Average M Score", AVERAGE ( Customer[M Score] )
+)
+ORDER BY Customer[F Score]
+
+EVALUATE
+SUMMARIZECOLUMNS (
+    Customer[Segment],
+    "Customers", COUNTROWS ( Customer ),
+    "Revenue", [Revenue],
+    "Revenue share", DIVIDE (
+        [Revenue],
+        CALCULATE ( [Revenue], REMOVEFILTERS ( Customer ), NOT ISBLANK ( Sales[Customer ID] ) )
+    )
+)
+ORDER BY [Revenue] DESC

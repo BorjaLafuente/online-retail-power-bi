@@ -17,6 +17,132 @@ table Customer
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Last Purchase Date' =
+			
+			CALCULATE ( MAX ( Sales[Date] ), Sales[IsValidSale] = TRUE () )
+		formatString: yyyy-mm-dd
+		lineageTag: f16150e2-97f1-4c87-a43e-966c1f0d7f29
+		summarizeBy: none
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column Recency =
+			
+			DATEDIFF ( Customer[Last Purchase Date], MAX ( Sales[Date] ), DAY )
+		formatString: 0
+		lineageTag: 0e49c14f-0af1-44a0-8822-126898cb4943
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Frequency = [Orders]
+		formatString: 0
+		lineageTag: d863be65-fdad-42d7-842e-47166c14e599
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Monetary = [Revenue]
+		formatString: "£"#,0.00;-"£"#,0.00;"£"#,0.00
+		lineageTag: 27ddf9d5-74c4-4300-9f0b-9d3ce5f6502a
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	column 'R Score' =
+			
+			VAR N = COUNTROWS ( Customer )
+			VAR Position = RANKX ( Customer, Customer[Recency], , DESC )
+			RETURN
+			    INT ( ( Position - 1 ) * 5 / N ) + 1
+		formatString: 0
+		lineageTag: e4da56f3-369f-435e-b3d1-3b0318f408f9
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'F Score' =
+			
+			SWITCH (
+			    TRUE (),
+			    Customer[Frequency] >= 10, 5,
+			    Customer[Frequency] >= 5, 4,
+			    Customer[Frequency] >= 3, 3,
+			    Customer[Frequency] = 2, 2,
+			    1
+			)
+		formatString: 0
+		lineageTag: 6e76db5b-e6bd-4d2d-a864-b4cbcc04668a
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'M Score' =
+			
+			VAR N = COUNTROWS ( Customer )
+			VAR Position = RANKX ( Customer, Customer[Monetary], , ASC )
+			RETURN
+			    INT ( ( Position - 1 ) * 5 / N ) + 1
+		formatString: 0
+		lineageTag: 282fd0e6-96f4-42bc-a02e-64f9a0567a99
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Segment =
+			
+			SWITCH (
+			    Customer[Segment Order],
+			    1, "Champions",
+			    2, "Loyal",
+			    3, "Potential Loyalists",
+			    4, "New Customers",
+			    5, "Need Attention",
+			    6, "At Risk",
+			    7, "Hibernating",
+			    8, "Lost"
+			)
+		lineageTag: d7c3f264-b619-4549-b381-8f7698882012
+		summarizeBy: none
+		sortByColumn: 'Segment Order'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Segment Order' =
+			
+			VAR R = Customer[R Score]
+			VAR F = Customer[F Score]
+			RETURN
+			    SWITCH (
+			        TRUE (),
+			        R >= 4 && F >= 4, 1,
+			        R = 3 && F >= 4, 2,
+			        R >= 4 && F >= 2, 3,
+			        R >= 4, 4,
+			        R = 3, 5,
+			        F >= 4, 6,
+			        F >= 2, 7,
+			        8
+			    )
+		isHidden
+		formatString: 0
+		lineageTag: 12ba181d-717c-4992-a62f-de913c845e5f
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Customer = m
 		mode: import
 		source =

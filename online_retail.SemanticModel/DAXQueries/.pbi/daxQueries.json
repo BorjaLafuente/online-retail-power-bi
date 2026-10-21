@@ -4,7 +4,8 @@
     "Model checks",
     "Measures by year",
     "Time intelligence checks",
-    "Largest lines"
+    "Largest lines",
+    "RFM checks"
   ],
-  "defaultTab": "Time intelligence checks"
+  "defaultTab": "RFM checks"
 }
