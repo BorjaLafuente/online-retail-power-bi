@@ -16,7 +16,7 @@ Sales dashboard for a UK-based online retailer of giftware, built in Power BI on
 - [x] Load and combine the two sheets of the source file, removing a week duplicated in both
 - [x] Data cleaning: cancellations, non-product codes, missing customers
 - [x] Star schema: sales fact table with product, customer and calendar dimensions
-- [ ] DAX measures
+- [x] DAX measures
 - [ ] Report pages
 - [ ] Documentation and screenshots
 
