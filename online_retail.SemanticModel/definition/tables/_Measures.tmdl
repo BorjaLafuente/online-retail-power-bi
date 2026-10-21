@@ -118,9 +118,8 @@ table _Measures
 	measure 'Return Rate' =
 			
 			DIVIDE ( [Returns], [Gross Revenue] )
+		formatString: 0.0\ %;-0.0\ %;0.0\ %
 		lineageTag: 94896189-5b90-4810-94a1-78d0e2d07466
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	partition _Measures = m
 		mode: import

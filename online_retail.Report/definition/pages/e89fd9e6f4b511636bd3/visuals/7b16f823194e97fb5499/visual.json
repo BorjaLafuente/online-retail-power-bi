@@ -1,0 +1,49 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "7b16f823194e97fb5499",
+  "position": {
+    "x": 10.212765957446809,
+    "y": 0,
+    "z": 0,
+    "height": 100.66869300911854,
+    "width": 426.01823708206689,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Sales overview",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontFamily": "Segoe UI Semibold",
+                      "fontSize": "28pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Net revenue after returns · Dec 2009 – 9 Dec 2011",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#808080"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
