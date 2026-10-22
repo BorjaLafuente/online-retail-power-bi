@@ -3,6 +3,7 @@ table _Measures
 
 	measure Revenue = [Gross Revenue] - [Returns]
 		formatString: "£"#,0;-"£"#,0;"£"#,0
+		displayFolder: 1. Sales
 		lineageTag: 40708f14-81f8-41da-97a2-9f1d801ae95f
 
 		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
@@ -14,6 +15,7 @@ table _Measures
 			    Sales[IsValidSale] = TRUE ()
 			)
 		formatString: #,0
+		displayFolder: 1. Sales
 		lineageTag: af9b1f89-e755-4259-b0d0-4f1b5ee8a77e
 
 	measure Units =
@@ -23,12 +25,14 @@ table _Measures
 			    Sales[IsValidSale] = TRUE ()
 			)
 		formatString: #,0
+		displayFolder: 1. Sales
 		lineageTag: 25eaf518-9419-40e5-884a-62e1bfe5b1fd
 
 	measure 'Average Order Value' =
 			
 			DIVIDE ( [Revenue], [Orders] )
 		formatString: "£"#,0.00;-"£"#,0.00;"£"#,0.00
+		displayFolder: 1. Sales
 		lineageTag: 19a2b8bd-8fb1-403e-81e5-04a432dad503
 
 		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
@@ -40,6 +44,7 @@ table _Measures
 			    Sales[IsValidSale] = TRUE ()
 			)
 		formatString: #,0
+		displayFolder: 3. Customers
 		lineageTag: 4f43b317-1ff8-4f1e-a472-56921f75c4cc
 
 	measure 'Revenue PY' =
@@ -57,6 +62,7 @@ table _Measures
 			        CALCULATE ( [Revenue], PeriodPY )
 			    )
 		formatString: "£"#,0;-"£"#,0;"£"#,0
+		displayFolder: 2. Time Intelligence
 		lineageTag: 64a734ba-abf2-4333-b265-52d3c5abc945
 
 		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
@@ -71,6 +77,7 @@ table _Measures
 			        CurrentRevenue - PreviousRevenue
 			    )
 		formatString: "£"#,0;-"£"#,0;"£"#,0
+		displayFolder: 2. Time Intelligence
 		lineageTag: 5bb59a56-0fd8-4f2d-83e6-e7cfb7e7c9c4
 
 		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
@@ -79,6 +86,7 @@ table _Measures
 			
 			DIVIDE ( [Revenue YoY], [Revenue PY] )
 		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		displayFolder: 2. Time Intelligence
 		lineageTag: 638c0224-1164-4f3b-bb16-c2241371cde1
 
 	measure 'Revenue YTD' =
@@ -88,6 +96,7 @@ table _Measures
 			    DATESYTD ( Calendar[Date] )
 			)
 		formatString: "£"#,0;-"£"#,0;"£"#,0
+		displayFolder: 2. Time Intelligence
 		lineageTag: 67dbbedd-f31f-4cfe-9835-eb5edb45707c
 
 		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
@@ -99,6 +108,7 @@ table _Measures
 			    Sales[IsValidSale] = TRUE ()
 			)
 		formatString: "£"#,0;-"£"#,0;"£"#,0
+		displayFolder: 1. Sales
 		lineageTag: 8f18577f-9399-4425-a9b5-3b0fd5ae71f3
 
 		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
@@ -111,6 +121,7 @@ table _Measures
 			    Sales[IsProduct] = TRUE ()
 			)
 		formatString: "£"#,0;-"£"#,0;"£"#,0
+		displayFolder: 1. Sales
 		lineageTag: 08976a6c-07bc-42b5-b876-c8b9bc5122a3
 
 		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
@@ -119,6 +130,7 @@ table _Measures
 			
 			DIVIDE ( [Returns], [Gross Revenue] )
 		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		displayFolder: 1. Sales
 		lineageTag: 94896189-5b90-4810-94a1-78d0e2d07466
 
 	measure 'Customer Share' =
@@ -128,6 +140,7 @@ table _Measures
 			    CALCULATE ( [Customers], REMOVEFILTERS ( Customer ) )
 			)
 		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		displayFolder: 3. Customers
 		lineageTag: 8a8eba7b-871d-4bd1-b05d-978f610b672e
 
 	measure 'Revenue Share' =
@@ -137,12 +150,14 @@ table _Measures
 			    CALCULATE ( [Revenue], REMOVEFILTERS ( Customer ), NOT ISBLANK ( Sales[Customer ID] ) )
 			)
 		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		displayFolder: 3. Customers
 		lineageTag: b0b503b2-a2df-43be-81dc-1244db5349f3
 
 	measure 'Revenue per Customer' =
 			
 			DIVIDE ( [Revenue], [Customers] )
 		formatString: "£"#,0;-"£"#,0;"£"#,0
+		displayFolder: 3. Customers
 		lineageTag: 484681d0-2897-4a93-8d54-1c904d03d18f
 
 		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
@@ -151,12 +166,14 @@ table _Measures
 			
 			AVERAGE ( Customer[Recency] )
 		formatString: 0
+		displayFolder: 3. Customers
 		lineageTag: 8cb1a164-7038-4182-b59b-8d3eeb728ff2
 
 	measure 'Avg Frequency' =
 			
 			AVERAGE ( Customer[Frequency] )
 		formatString: 0.0
+		displayFolder: 3. Customers
 		lineageTag: 4376bfa2-9d3c-4ba1-9621-c313eff20908
 
 	measure 'Insight Champions' =
@@ -167,6 +184,7 @@ table _Measures
 			    "Champions are " & FORMAT ( CustomerPct, "0%", "en-GB" )
 			        & " of customers but generate " & FORMAT ( RevenuePct, "0%", "en-GB" )
 			        & " of revenue."
+		displayFolder: 6. Insights
 		lineageTag: 2999bcc6-8330-4d3a-8bfe-386875c0ecf3
 
 	measure 'Insight At Risk' =
@@ -177,6 +195,7 @@ table _Measures
 			    "At Risk customers are worth " & FORMAT ( ValuePerCustomer, "£#,##0", "en-GB" )
 			        & " each on average but have not bought for " & FORMAT ( DaysSince, "0" )
 			        & " days on average: the first target for a win-back campaign."
+		displayFolder: 6. Insights
 		lineageTag: 56a772b2-0f5a-4bf1-b4a4-06e99f44b251
 
 	measure 'Insight Low Value' =
@@ -189,6 +208,7 @@ table _Measures
 			    "Lost and Hibernating customers are " & FORMAT ( CustomerPct, "0%", "en-GB" )
 			        & " of customers but bring only " & FORMAT ( RevenuePct, "0%", "en-GB" )
 			        & " of revenue."
+		displayFolder: 6. Insights
 		lineageTag: f6af6faa-53a7-46a1-a70c-7c857222d3b5
 
 	measure 'Product Count Share' =
@@ -198,6 +218,7 @@ table _Measures
 			    CALCULATE ( COUNTROWS ( 'Product' ), REMOVEFILTERS ( 'Product' ) )
 			)
 		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		displayFolder: 4. Products
 		lineageTag: 668b905b-c53a-4241-966c-53da40de779d
 
 	measure 'Product Revenue Share' =
@@ -207,6 +228,7 @@ table _Measures
 			    CALCULATE ( SUM ( 'Product'[Product Revenue] ), REMOVEFILTERS ( 'Product' ) )
 			)
 		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		displayFolder: 4. Products
 		lineageTag: 86a6a11d-2d77-4103-bc92-28498d7390b8
 
 	measure 'UK Revenue Share' =
@@ -216,12 +238,14 @@ table _Measures
 			    [Revenue]
 			)
 		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		displayFolder: 5. Geography
 		lineageTag: a633f0e6-8b34-460d-8d73-347b218cec05
 
 	measure 'International Revenue' =
 			
 			CALCULATE ( [Revenue], Sales[Country] <> "United Kingdom" )
 		formatString: "£"#,0;-"£"#,0;"£"#,0
+		displayFolder: 5. Geography
 		lineageTag: 831bc09c-0912-40c8-8c27-2e2d2114e06a
 
 		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
@@ -230,6 +254,7 @@ table _Measures
 			
 			CALCULATE ( [Revenue], Sales[Country] = "United Kingdom" )
 		formatString: "£"#,0;-"£"#,0;"£"#,0
+		displayFolder: 5. Geography
 		lineageTag: fdd8a6e7-1a47-4923-af5e-f02390b8cbb2
 
 		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
@@ -241,12 +266,14 @@ table _Measures
 			    Sales[IsValidSale] = TRUE ()
 			)
 		formatString: 0
+		displayFolder: 5. Geography
 		lineageTag: 8b4b81d8-e845-4f9c-a715-ace32e14bcf7
 
 	measure 'International Revenue Share' =
 			
 			DIVIDE ( [International Revenue], [Revenue] )
 		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		displayFolder: 5. Geography
 		lineageTag: 15feb669-0eba-4658-8910-db428af7d3ab
 
 	partition _Measures = m
