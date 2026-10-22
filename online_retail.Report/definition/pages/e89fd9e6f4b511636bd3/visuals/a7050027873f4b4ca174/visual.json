@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "a7050027873f4b4ca174",
   "position": {
-    "x": 10.212765957446809,
-    "y": 100.66869300911854,
-    "z": 2000,
-    "height": 122.55319148936169,
-    "width": 1909.7872340425531,
+    "x": 263.3497536945813,
+    "y": 101.08374384236453,
+    "z": 4000,
+    "height": 122.36453201970443,
+    "width": 1651,
     "tabOrder": 2000
   },
   "visual": {
@@ -204,6 +204,21 @@
           },
           "selector": {
             "id": "default"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'KPI cards'"
+                }
+              }
+            }
           }
         }
       ]

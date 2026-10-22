@@ -4,7 +4,7 @@
   "position": {
     "x": 1464.8024316109422,
     "y": 29.179331306990882,
-    "z": 1000,
+    "z": 3000,
     "height": 43.768996960486319,
     "width": 455.19756838905772,
     "tabOrder": 1000
@@ -81,6 +81,21 @@
               "expr": {
                 "Literal": {
                   "Value": "14D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Year slicer'"
                 }
               }
             }

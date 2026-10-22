@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "a5da97f224ae50eb5b66",
   "position": {
-    "x": 970.21276595744678,
-    "y": 100.66869300911854,
+    "x": 1041.7805065234077,
+    "y": 101.67306216423638,
     "z": 2000,
-    "height": 525.22796352583589,
-    "width": 949.78723404255322,
+    "height": 524.57405986185734,
+    "width": 874,
     "tabOrder": 2000
   },
   "visual": {
@@ -173,7 +173,7 @@
                   "color": {
                     "expr": {
                       "Literal": {
-                        "Value": "'maxColor'"
+                        "Value": "'#a8c1f7'"
                       }
                     }
                   }
@@ -184,7 +184,7 @@
                   "color": {
                     "expr": {
                       "Literal": {
-                        "Value": "'minColor'"
+                        "Value": "'#f1a8a8'"
                       }
                     }
                   }
@@ -255,13 +255,41 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "194.0083793676609D"
+                  "Value": "139.47635729680684D"
                 }
               }
             }
           },
           "selector": {
             "metadata": "_Measures.Avg Recency (days)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "119.328725512757D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Revenue"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "117.10835536785038D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Avg Frequency"
           }
         }
       ]
