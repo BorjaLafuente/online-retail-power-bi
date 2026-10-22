@@ -191,6 +191,24 @@ table _Measures
 			        & " of revenue."
 		lineageTag: f6af6faa-53a7-46a1-a70c-7c857222d3b5
 
+	measure 'Product Count Share' =
+			
+			DIVIDE (
+			    COUNTROWS ( 'Product' ),
+			    CALCULATE ( COUNTROWS ( 'Product' ), REMOVEFILTERS ( 'Product' ) )
+			)
+		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		lineageTag: 668b905b-c53a-4241-966c-53da40de779d
+
+	measure 'Product Revenue Share' =
+			
+			DIVIDE (
+			    SUM ( 'Product'[Product Revenue] ),
+			    CALCULATE ( SUM ( 'Product'[Product Revenue] ), REMOVEFILTERS ( 'Product' ) )
+			)
+		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		lineageTag: 86a6a11d-2d77-4103-bc92-28498d7390b8
+
 	partition _Measures = m
 		mode: import
 		source =

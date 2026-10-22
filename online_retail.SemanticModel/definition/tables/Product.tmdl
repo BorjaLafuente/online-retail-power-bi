@@ -17,6 +17,63 @@ table Product
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Product Revenue' = [Revenue]
+		formatString: "£"#,0;-"£"#,0;"£"#,0
+		lineageTag: 3f1069e2-afa7-4301-a02f-56c8eeed7f07
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	column 'Revenue Rank' =
+			
+			RANKX ( 'Product', 'Product'[Product Revenue], , DESC )
+		formatString: 0
+		lineageTag: 2ff906df-71f2-4dd0-b4e1-0769c4070069
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cumulative Revenue Share' =
+			
+			VAR CurrentRevenue = 'Product'[Product Revenue]
+			RETURN
+			    DIVIDE (
+			        SUMX (
+			            FILTER ( 'Product', 'Product'[Product Revenue] >= CurrentRevenue ),
+			            'Product'[Product Revenue]
+			        ),
+			        SUM ( 'Product'[Product Revenue] )
+			    )
+		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		lineageTag: c984ac77-15b7-401d-a444-5ad761ec1c08
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pareto Class' =
+			
+			SWITCH (
+			    TRUE (),
+			    Product[Cumulative Revenue Share] <= 0.80, "A",
+			    Product[Cumulative Revenue Share] <= 0.95, "B",
+			    "C"
+			)
+		lineageTag: a8ea54ec-dd80-4368-acdb-54a4b57281f1
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Rank Share' =
+			
+			DIVIDE ( 'Product'[Revenue Rank], COUNTROWS ( 'Product' ) )
+		formatString: 0\ %;-0\ %;0\ %
+		lineageTag: 3e6b5cf8-c3cc-4145-80ae-86b67c4e8088
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Product = m
 		mode: import
 		source =

@@ -5,7 +5,8 @@
     "Measures by year",
     "Time intelligence checks",
     "Largest lines",
-    "RFM checks"
+    "RFM checks",
+    "Pareto checks"
   ],
-  "defaultTab": "RFM checks"
+  "defaultTab": "Pareto checks"
 }

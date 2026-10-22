@@ -1,0 +1,21 @@
+EVALUATE
+SUMMARIZECOLUMNS (
+    Product[Pareto Class],
+    "Products", COUNTROWS ( Product ),
+    "Product share", DIVIDE ( COUNTROWS ( Product ), CALCULATE ( COUNTROWS ( Product ), REMOVEFILTERS ( Product ) ) ),
+    "Revenue", SUM ( Product[Product Revenue] ),
+    "Revenue share", DIVIDE ( SUM ( Product[Product Revenue] ), CALCULATE ( SUM ( Product[Product Revenue] ), REMOVEFILTERS ( Product ) ) )
+)
+ORDER BY Product[Pareto Class]
+
+EVALUATE
+ROW (
+    "Products with net revenue <= 0", COUNTROWS ( FILTER ( Product, Product[Product Revenue] <= 0 ) )
+)
+
+EVALUATE
+ROW (
+    "Rows in Product", COUNTROWS ( 'Product' ),
+    "Distinct StockCodes", DISTINCTCOUNT ( 'Product'[StockCode] ),
+    "Blank class", COUNTROWS ( FILTER ( 'Product', ISBLANK ( 'Product'[Pareto Class] ) ) )
+)
