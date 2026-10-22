@@ -4,10 +4,10 @@
   "position": {
     "x": 960,
     "y": 556.92307692307691,
-    "z": 3,
+    "z": 3000,
     "height": 523.07692307692309,
     "width": 949.23076923076917,
-    "tabOrder": 3
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "tableEx",
@@ -310,62 +310,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "3079f7f506b9771f0028",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Product"
-              }
-            },
-            "Property": "StockCode"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "85327b90a80979200e2c",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Product"
-              }
-            },
-            "Property": "Description"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "734865fa535d64958890",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Product"
-              }
-            },
-            "Property": "Product Revenue"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "8cbd2a523b66499a0655",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Units"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

@@ -4,10 +4,10 @@
   "position": {
     "x": 960,
     "y": 100,
-    "z": 2,
+    "z": 2000,
     "height": 456.92307692307691,
     "width": 949.23076923076917,
-    "tabOrder": 2
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "clusteredBarChart",
@@ -229,51 +229,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "193f34f464760f63a05f",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Product"
-              }
-            },
-            "Property": "Pareto Class"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "8484a7e43d0eca66e70b",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Product Count Share"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "62d5a4baeddd696f5e52",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Product Revenue Share"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

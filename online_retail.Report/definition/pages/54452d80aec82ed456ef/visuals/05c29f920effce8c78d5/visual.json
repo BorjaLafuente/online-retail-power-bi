@@ -4,10 +4,10 @@
   "position": {
     "x": 10.769230769230768,
     "y": 100,
-    "z": 1,
+    "z": 1000,
     "height": 980,
     "width": 949.23076923076917,
-    "tabOrder": 1
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "lineChart",
@@ -233,42 +233,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "42de1041b0847cf66271",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Product"
-              }
-            },
-            "Property": "Product Rank Share"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "de747cccd74aa2dce39f",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Product"
-                  }
-                },
-                "Property": "Cumulative Revenue Share"
-              }
-            },
-            "Function": 1
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

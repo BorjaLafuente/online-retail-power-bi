@@ -135,9 +135,11 @@ table Sales
 				)
 				and not Text.StartsWith([StockCode], "GIFT_")), {{"IsProduct", type logical}}),
 				  #"Add IsValidSale" = Table.TransformColumnTypes(Table.AddColumn(#"Add IsProduct", "IsValidSale", each [TransactionType] = "Sale" and [IsProduct] and [Price] > 0), {{"IsValidSale", type logical}}),
-				  #"Add Date" = Table.AddColumn(#"Add IsValidSale", "Date", each DateTime.Date([InvoiceDate]), type nullable date)
+				  #"Add Date" = Table.AddColumn(#"Add IsValidSale", "Date", each DateTime.Date([InvoiceDate]), type nullable date),
+				  #"Rename EIRE to Ireland" = Table.ReplaceValue(#"Add Date", "EIRE", "Ireland", Replacer.ReplaceText, {"Country"}),
+				  #"Rename RSA to South Africa" = Table.ReplaceValue(#"Rename EIRE to Ireland", "RSA", "South Africa", Replacer.ReplaceText, {"Country"})
 				in
-				  #"Add Date"
+				  #"Rename RSA to South Africa"
 
 	annotation PBI_ResultType = Table
 

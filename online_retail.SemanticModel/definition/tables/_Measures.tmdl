@@ -209,6 +209,46 @@ table _Measures
 		formatString: 0.0\ %;-0.0\ %;0.0\ %
 		lineageTag: 86a6a11d-2d77-4103-bc92-28498d7390b8
 
+	measure 'UK Revenue Share' =
+			
+			DIVIDE (
+			    CALCULATE ( [Revenue], Sales[Country] = "United Kingdom" ),
+			    [Revenue]
+			)
+		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		lineageTag: a633f0e6-8b34-460d-8d73-347b218cec05
+
+	measure 'International Revenue' =
+			
+			CALCULATE ( [Revenue], Sales[Country] <> "United Kingdom" )
+		formatString: "£"#,0;-"£"#,0;"£"#,0
+		lineageTag: 831bc09c-0912-40c8-8c27-2e2d2114e06a
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	measure 'UK Revenue' =
+			
+			CALCULATE ( [Revenue], Sales[Country] = "United Kingdom" )
+		formatString: "£"#,0;-"£"#,0;"£"#,0
+		lineageTag: fdd8a6e7-1a47-4923-af5e-f02390b8cbb2
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	measure Countries =
+			
+			CALCULATE (
+			    DISTINCTCOUNT ( Sales[Country] ),
+			    Sales[IsValidSale] = TRUE ()
+			)
+		formatString: 0
+		lineageTag: 8b4b81d8-e845-4f9c-a715-ace32e14bcf7
+
+	measure 'International Revenue Share' =
+			
+			DIVIDE ( [International Revenue], [Revenue] )
+		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		lineageTag: 15feb669-0eba-4658-8910-db428af7d3ab
+
 	partition _Measures = m
 		mode: import
 		source =

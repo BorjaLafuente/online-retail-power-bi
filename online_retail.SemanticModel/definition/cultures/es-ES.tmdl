@@ -5666,9 +5666,401 @@ cultureInfo es-ES
 			          }
 			        }
 			      ]
+			    },
+			    "entity__measure.UK_revenue_share": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "UK Revenue Share"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "UK revenue share": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "share": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "uk income share": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "uk profit share": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "uk turnover share": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "uk yield share": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "uk revenue part": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "uk revenue portion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "uk revenue segment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "uk revenue cut": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "uk revenue stake": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "uk revenue bit": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "UK share of revenue": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.international_revenue": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "International Revenue"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "international revenue": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "international income": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "international profit": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "international turnover": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "international yield": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.UK_revenue": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "UK Revenue"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "UK revenue": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "uk income": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "uk profit": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "uk turnover": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "uk yield": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.countries": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "Countries"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "countries": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
+			    "sale_has_entity__measure_UK_revenue": {
+			      "Binding": {
+			        "ConceptualEntity": "Sales"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "sale": {
+			          "Target": {
+			            "Entity": "sale"
+			          }
+			        },
+			        "entity__measure.UK_revenue": {
+			          "Target": {
+			            "Entity": "entity__measure.UK_revenue"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "sale"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.UK_revenue"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "sales_have_UK_revenue"
+			        }
+			      ]
+			    },
+			    "sale_has_entity__measure_international_revenue": {
+			      "Binding": {
+			        "ConceptualEntity": "Sales"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "sale": {
+			          "Target": {
+			            "Entity": "sale"
+			          }
+			        },
+			        "entity__measure.international_revenue": {
+			          "Target": {
+			            "Entity": "entity__measure.international_revenue"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "sale"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.international_revenue"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "sales_have_international_revenue"
+			        }
+			      ]
+			    },
+			    "sale_has_entity__measure_UK_revenue_share": {
+			      "Binding": {
+			        "ConceptualEntity": "Sales"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "sale": {
+			          "Target": {
+			            "Entity": "sale"
+			          }
+			        },
+			        "entity__measure.UK_revenue_share": {
+			          "Target": {
+			            "Entity": "entity__measure.UK_revenue_share"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "sale"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.UK_revenue_share"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "sales_have_UK_revenue_share"
+			        }
+			      ]
+			    },
+			    "product_has_entity__measure_product_revenue_share": {
+			      "Binding": {
+			        "ConceptualEntity": "Product"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "product": {
+			          "Target": {
+			            "Entity": "product"
+			          }
+			        },
+			        "entity__measure.product_revenue_share": {
+			          "Target": {
+			            "Entity": "entity__measure.product_revenue_share"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "product"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.product_revenue_share"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "products_have_product_revenue_share"
+			        }
+			      ]
+			    },
 			    "product_has_entity__measure_product_count_share": {
 			      "Binding": {
 			        "ConceptualEntity": "Product"
@@ -7811,20 +8203,20 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "product_has_entity__measure_product_revenue_share": {
+			    "sale_has_entity__measure_countries": {
 			      "Binding": {
-			        "ConceptualEntity": "Product"
+			        "ConceptualEntity": "Sales"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "product": {
+			        "sale": {
 			          "Target": {
-			            "Entity": "product"
+			            "Entity": "sale"
 			          }
 			        },
-			        "entity__measure.product_revenue_share": {
+			        "entity__measure.countries": {
 			          "Target": {
-			            "Entity": "entity__measure.product_revenue_share"
+			            "Entity": "entity__measure.countries"
 			          }
 			        }
 			      },
@@ -7832,15 +8224,15 @@ cultureInfo es-ES
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "product"
+			              "Role": "sale"
 			            },
 			            "Object": {
-			              "Role": "entity__measure.product_revenue_share"
+			              "Role": "entity__measure.countries"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "products_have_product_revenue_share"
+			          "ID": "sales_have_countries1"
 			        }
 			      ]
 			    },
