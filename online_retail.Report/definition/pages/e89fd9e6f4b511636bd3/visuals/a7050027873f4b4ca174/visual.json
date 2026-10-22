@@ -4,10 +4,10 @@
   "position": {
     "x": 10.212765957446809,
     "y": 100.66869300911854,
-    "z": 2,
+    "z": 2000,
     "height": 122.55319148936169,
     "width": 1909.7872340425531,
-    "tabOrder": 2
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -209,79 +209,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "45b9ef07951347d401cc",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Revenue"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "c197a08967423598ef5e",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Orders"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "bea8e0622061e5f948d1",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Average Order Value"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "69b476b0c776cb4f75f6",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Customers"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "9139da289beec34559c2",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Return Rate"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

@@ -33,6 +33,7 @@
                   {
                     "value": "Net revenue after returns · Dec 2009 – 9 Dec 2011",
                     "textStyle": {
+                      "fontFamily": "Segoe UI Semibold",
                       "fontSize": "14pt",
                       "color": "#808080"
                     }

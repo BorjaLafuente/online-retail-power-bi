@@ -4,10 +4,10 @@
   "position": {
     "x": 10.212765957446809,
     "y": 237.81155015197569,
-    "z": 3,
+    "z": 3000,
     "height": 841.82370820668689,
     "width": 1909.7872340425531,
-    "tabOrder": 3
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "lineChart",
@@ -159,6 +159,25 @@
           "selector": {
             "metadata": "_Measures.Revenue PY"
           }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Revenue"
+          }
         }
       ],
       "categoryAxis": [
@@ -245,51 +264,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "cd2368945f7b7d2165cc",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Calendar"
-              }
-            },
-            "Property": "Year Month"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "d9266f66131f6bf5eda2",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Revenue"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "d274e77185dd83e06073",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Revenue PY"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

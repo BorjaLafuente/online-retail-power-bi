@@ -121,6 +121,76 @@ table _Measures
 		formatString: 0.0\ %;-0.0\ %;0.0\ %
 		lineageTag: 94896189-5b90-4810-94a1-78d0e2d07466
 
+	measure 'Customer Share' =
+			
+			DIVIDE (
+			    [Customers],
+			    CALCULATE ( [Customers], REMOVEFILTERS ( Customer ) )
+			)
+		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		lineageTag: 8a8eba7b-871d-4bd1-b05d-978f610b672e
+
+	measure 'Revenue Share' =
+			
+			DIVIDE (
+			    [Revenue],
+			    CALCULATE ( [Revenue], REMOVEFILTERS ( Customer ), NOT ISBLANK ( Sales[Customer ID] ) )
+			)
+		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		lineageTag: b0b503b2-a2df-43be-81dc-1244db5349f3
+
+	measure 'Revenue per Customer' =
+			
+			DIVIDE ( [Revenue], [Customers] )
+		formatString: "£"#,0;-"£"#,0;"£"#,0
+		lineageTag: 484681d0-2897-4a93-8d54-1c904d03d18f
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	measure 'Avg Recency (days)' =
+			
+			AVERAGE ( Customer[Recency] )
+		formatString: 0
+		lineageTag: 8cb1a164-7038-4182-b59b-8d3eeb728ff2
+
+	measure 'Avg Frequency' =
+			
+			AVERAGE ( Customer[Frequency] )
+		formatString: 0.0
+		lineageTag: 4376bfa2-9d3c-4ba1-9621-c313eff20908
+
+	measure 'Insight Champions' =
+			
+			VAR CustomerPct = CALCULATE ( [Customer Share], Customer[Segment] = "Champions" )
+			VAR RevenuePct  = CALCULATE ( [Revenue Share],  Customer[Segment] = "Champions" )
+			RETURN
+			    "Champions are " & FORMAT ( CustomerPct, "0%", "en-GB" )
+			        & " of customers but generate " & FORMAT ( RevenuePct, "0%", "en-GB" )
+			        & " of revenue."
+		lineageTag: 2999bcc6-8330-4d3a-8bfe-386875c0ecf3
+
+	measure 'Insight At Risk' =
+			
+			VAR ValuePerCustomer = CALCULATE ( [Revenue per Customer], Customer[Segment] = "At Risk" )
+			VAR DaysSince        = CALCULATE ( [Avg Recency (days)],   Customer[Segment] = "At Risk" )
+			RETURN
+			    "At Risk customers are worth " & FORMAT ( ValuePerCustomer, "£#,##0", "en-GB" )
+			        & " each on average but have not bought for " & FORMAT ( DaysSince, "0" )
+			        & " days on average: the first target for a win-back campaign."
+		lineageTag: 56a772b2-0f5a-4bf1-b4a4-06e99f44b251
+
+	measure 'Insight Low Value' =
+			
+			VAR CustomerPct =
+			    CALCULATE ( [Customer Share], Customer[Segment] IN { "Lost", "Hibernating" } )
+			VAR RevenuePct =
+			    CALCULATE ( [Revenue Share], Customer[Segment] IN { "Lost", "Hibernating" } )
+			RETURN
+			    "Lost and Hibernating customers are " & FORMAT ( CustomerPct, "0%", "en-GB" )
+			        & " of customers but bring only " & FORMAT ( RevenuePct, "0%", "en-GB" )
+			        & " of revenue."
+		lineageTag: f6af6faa-53a7-46a1-a70c-7c857222d3b5
+
 	partition _Measures = m
 		mode: import
 		source =
