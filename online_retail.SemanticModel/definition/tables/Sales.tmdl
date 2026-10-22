@@ -73,6 +73,7 @@ table Sales
 	column Country
 		dataType: string
 		lineageTag: 84f1040b-60f4-456d-86e3-f73d94022767
+		dataCategory: Country
 		summarizeBy: none
 		sourceColumn: Country
 
