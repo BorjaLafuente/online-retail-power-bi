@@ -74,6 +74,15 @@ table Product
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Product Rank Bin' =
+			
+			ROUNDUP ( 'Product'[Product Rank Share], 3 )
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 318df4e4-5dee-45f4-b492-0e441aa80393
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Product = m
 		mode: import
 		source =

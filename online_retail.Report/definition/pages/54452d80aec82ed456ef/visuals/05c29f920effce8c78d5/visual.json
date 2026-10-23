@@ -23,11 +23,11 @@
                       "Entity": "Product"
                     }
                   },
-                  "Property": "Product Rank Share"
+                  "Property": "Product Rank Bin"
                 }
               },
-              "queryRef": "Product.Product Rank Share",
-              "nativeQueryRef": "Product Rank Share",
+              "queryRef": "Product.Product Rank Bin",
+              "nativeQueryRef": "Product Rank Bin",
               "active": true
             }
           ]
@@ -47,11 +47,11 @@
                       "Property": "Cumulative Revenue Share"
                     }
                   },
-                  "Function": 1
+                  "Function": 4
                 }
               },
               "queryRef": "CountNonNull(Product.Cumulative Revenue Share)",
-              "nativeQueryRef": "Promedio de Cumulative Revenue Share"
+              "nativeQueryRef": "Máx. de Cumulative Revenue Share"
             }
           ]
         }
@@ -71,7 +71,7 @@
                     "Property": "Cumulative Revenue Share"
                   }
                 },
-                "Function": 1
+                "Function": 4
               }
             },
             "direction": "Descending"
@@ -222,6 +222,26 @@
         {
           "properties": {
             "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "showTooltipButton": {
               "expr": {
                 "Literal": {
                   "Value": "false"
