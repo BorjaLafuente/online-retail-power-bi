@@ -41,7 +41,8 @@
                 }
               },
               "queryRef": "_Measures.Revenue",
-              "nativeQueryRef": "Revenue"
+              "nativeQueryRef": "Net revenue",
+              "displayName": "Net revenue"
             },
             {
               "field": {
@@ -69,7 +70,8 @@
                 }
               },
               "queryRef": "_Measures.Average Order Value",
-              "nativeQueryRef": "Average Order Value"
+              "nativeQueryRef": "Avg order value",
+              "displayName": "Avg order value"
             },
             {
               "field": {
@@ -244,7 +246,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "159.4073078246713D"
+                  "Value": "174.00056349703775D"
                 }
               }
             }
@@ -258,7 +260,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "85.88310298853757D"
+                  "Value": "89.87906077787562D"
                 }
               }
             }
@@ -293,6 +295,20 @@
           },
           "selector": {
             "metadata": "Sales.Country"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "144.99014788535345D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Average Order Value"
           }
         }
       ]

@@ -27,8 +27,9 @@
                 }
               },
               "queryRef": "Product.Product Rank Bin",
-              "nativeQueryRef": "Product Rank Bin",
-              "active": true
+              "nativeQueryRef": "Share of products",
+              "active": true,
+              "displayName": "Share of products"
             }
           ]
         },
@@ -51,7 +52,8 @@
                 }
               },
               "queryRef": "CountNonNull(Product.Cumulative Revenue Share)",
-              "nativeQueryRef": "Máx. de Cumulative Revenue Share"
+              "nativeQueryRef": "Cumulative share of revenue",
+              "displayName": "Cumulative share of revenue"
             }
           ]
         }

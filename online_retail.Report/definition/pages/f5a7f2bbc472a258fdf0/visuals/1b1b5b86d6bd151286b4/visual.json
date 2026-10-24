@@ -46,7 +46,8 @@
                 }
               },
               "queryRef": "_Measures.International Revenue Share",
-              "nativeQueryRef": "International Revenue Share"
+              "nativeQueryRef": "International share",
+              "displayName": "International share"
             }
           ]
         }

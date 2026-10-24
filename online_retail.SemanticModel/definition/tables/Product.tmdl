@@ -46,11 +46,13 @@ table Product
 			        ),
 			        SUM ( 'Product'[Product Revenue] )
 			    )
-		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		formatString: 0.0%
 		lineageTag: c984ac77-15b7-401d-a444-5ad761ec1c08
 		summarizeBy: none
 
 		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isCustom":true}
 
 	column 'Pareto Class' =
 			
@@ -68,20 +70,24 @@ table Product
 	column 'Product Rank Share' =
 			
 			DIVIDE ( 'Product'[Revenue Rank], COUNTROWS ( 'Product' ) )
-		formatString: 0\ %;-0\ %;0\ %
+		formatString: 0%
 		lineageTag: 3e6b5cf8-c3cc-4145-80ae-86b67c4e8088
 		summarizeBy: none
 
 		annotation SummarizationSetBy = Automatic
 
+		annotation PBI_FormatHint = {"isCustom":true}
+
 	column 'Product Rank Bin' =
 			
 			ROUNDUP ( 'Product'[Product Rank Share], 3 )
-		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		formatString: 0.0%
 		lineageTag: 318df4e4-5dee-45f4-b492-0e441aa80393
 		summarizeBy: none
 
 		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isCustom":true}
 
 	partition Product = m
 		mode: import

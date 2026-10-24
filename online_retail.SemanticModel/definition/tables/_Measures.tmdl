@@ -85,9 +85,11 @@ table _Measures
 	measure 'Revenue YoY %' =
 			
 			DIVIDE ( [Revenue YoY], [Revenue PY] )
-		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		formatString: 0.0%
 		displayFolder: 2. Time Intelligence
 		lineageTag: 638c0224-1164-4f3b-bb16-c2241371cde1
+
+		annotation PBI_FormatHint = {"isCustom":true}
 
 	measure 'Revenue YTD' =
 			
@@ -129,9 +131,11 @@ table _Measures
 	measure 'Return Rate' =
 			
 			DIVIDE ( [Returns], [Gross Revenue] )
-		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		formatString: 0.0%
 		displayFolder: 1. Sales
 		lineageTag: 94896189-5b90-4810-94a1-78d0e2d07466
+
+		annotation PBI_FormatHint = {"isCustom":true}
 
 	measure 'Customer Share' =
 			
@@ -139,9 +143,11 @@ table _Measures
 			    [Customers],
 			    CALCULATE ( [Customers], REMOVEFILTERS ( Customer ) )
 			)
-		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		formatString: 0.0%
 		displayFolder: 3. Customers
 		lineageTag: 8a8eba7b-871d-4bd1-b05d-978f610b672e
+
+		annotation PBI_FormatHint = {"isCustom":true}
 
 	measure 'Revenue Share' =
 			
@@ -149,9 +155,11 @@ table _Measures
 			    [Revenue],
 			    CALCULATE ( [Revenue], REMOVEFILTERS ( Customer ), NOT ISBLANK ( Sales[Customer ID] ) )
 			)
-		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		formatString: 0.0%
 		displayFolder: 3. Customers
 		lineageTag: b0b503b2-a2df-43be-81dc-1244db5349f3
+
+		annotation PBI_FormatHint = {"isCustom":true}
 
 	measure 'Revenue per Customer' =
 			
@@ -217,9 +225,11 @@ table _Measures
 			    COUNTROWS ( 'Product' ),
 			    CALCULATE ( COUNTROWS ( 'Product' ), REMOVEFILTERS ( 'Product' ) )
 			)
-		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		formatString: 0.0%
 		displayFolder: 4. Products
 		lineageTag: 668b905b-c53a-4241-966c-53da40de779d
+
+		annotation PBI_FormatHint = {"isCustom":true}
 
 	measure 'Product Revenue Share' =
 			
@@ -227,9 +237,11 @@ table _Measures
 			    SUM ( 'Product'[Product Revenue] ),
 			    CALCULATE ( SUM ( 'Product'[Product Revenue] ), REMOVEFILTERS ( 'Product' ) )
 			)
-		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		formatString: 0.0%
 		displayFolder: 4. Products
 		lineageTag: 86a6a11d-2d77-4103-bc92-28498d7390b8
+
+		annotation PBI_FormatHint = {"isCustom":true}
 
 	measure 'UK Revenue Share' =
 			
@@ -237,9 +249,11 @@ table _Measures
 			    CALCULATE ( [Revenue], Sales[Country] = "United Kingdom" ),
 			    [Revenue]
 			)
-		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		formatString: 0.0%
 		displayFolder: 5. Geography
 		lineageTag: a633f0e6-8b34-460d-8d73-347b218cec05
+
+		annotation PBI_FormatHint = {"isCustom":true}
 
 	measure 'International Revenue' =
 			
@@ -272,9 +286,11 @@ table _Measures
 	measure 'International Revenue Share' =
 			
 			DIVIDE ( [International Revenue], [Revenue] )
-		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		formatString: 0.0%
 		displayFolder: 5. Geography
 		lineageTag: 15feb669-0eba-4658-8910-db428af7d3ab
+
+		annotation PBI_FormatHint = {"isCustom":true}
 
 	partition _Measures = m
 		mode: import

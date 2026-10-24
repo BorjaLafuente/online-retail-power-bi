@@ -10,68 +10,68 @@
       "nodes": [
         {
           "location": {
-            "x": 491,
-            "y": 70
+            "x": 607,
+            "y": 118
           },
           "nodeIndex": "Sales",
           "nodeLineageTag": "fba3a2fe-6f06-479a-a802-c05e89b6ec49",
           "size": {
-            "height": 469,
+            "height": 392,
             "width": 234
           },
           "zIndex": 4
         },
         {
           "location": {
-            "x": 489,
-            "y": 578
+            "x": 291,
+            "y": 356
           },
           "nodeIndex": "Customer",
           "nodeLineageTag": "9d863363-1683-464a-b267-cac7e000df83",
           "size": {
-            "height": 128,
+            "height": 360,
             "width": 234
           },
-          "zIndex": 3
+          "zIndex": 5
         },
         {
           "location": {
-            "x": 169,
+            "x": 160,
             "y": 0
           },
           "nodeIndex": "Product",
           "nodeLineageTag": "b9c291be-4649-41ff-935e-2638d3bbb187",
           "size": {
-            "height": 128,
-            "width": 234
-          },
-          "zIndex": 1
-        },
-        {
-          "location": {
-            "x": 948,
-            "y": 223
-          },
-          "nodeIndex": "Calendar",
-          "nodeLineageTag": "54f7aaad-a180-43b8-bfb9-33545bb904de",
-          "size": {
-            "height": 200,
+            "height": 284,
             "width": 234
           },
           "zIndex": 2
         },
         {
           "location": {
-            "x": 1063,
-            "y": 301
+            "x": 985,
+            "y": 0
+          },
+          "nodeIndex": "Calendar",
+          "nodeLineageTag": "54f7aaad-a180-43b8-bfb9-33545bb904de",
+          "size": {
+            "height": 292,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 1463,
+            "y": 0
           },
           "nodeIndex": "_Measures",
           "nodeLineageTag": "e4bb016c-c404-4982-9ab3-212c97a2127e",
           "size": {
-            "height": 104,
+            "height": 720,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 1
         }
       ],
       "name": "Todas las tablas",

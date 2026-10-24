@@ -55,7 +55,8 @@
                 }
               },
               "queryRef": "_Measures.Revenue",
-              "nativeQueryRef": "Revenue"
+              "nativeQueryRef": "Net revenue",
+              "displayName": "Net revenue"
             },
             {
               "field": {
