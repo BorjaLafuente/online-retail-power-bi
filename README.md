@@ -6,6 +6,10 @@ The report covers sales trends, customer segmentation (RFM), product concentrati
 
 ![Overview page](docs/screenshots/overview.png)
 
+## Demo
+
+https://github.com/user-attachments/assets/c9d19052-9928-48ae-929b-7644b8563f5d
+
 ## Key findings
 
 - **Net revenue of £18.98M** after returns, from 39,516 orders and 5,852 identified customers. Returns are 3.7% of gross sales.
