@@ -4,10 +4,10 @@
   "position": {
     "x": 0,
     "y": 50,
-    "z": 1,
+    "z": 1000,
     "height": 74,
     "width": 380,
-    "tabOrder": 1
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -115,51 +115,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "cac91f26cb83904f8ece",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Revenue"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "c03513d898aa53f452e3",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Orders"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "f69e45d4afc59a73f2a5",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Average Order Value"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

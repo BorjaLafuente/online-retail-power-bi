@@ -155,51 +155,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "2f7c3c6de03fabddc9aa",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "UK Revenue Share"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "bb0c6848f389b4a167be",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "International Revenue"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "d913fdbbf60bd4792867",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Countries"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

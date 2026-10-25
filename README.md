@@ -26,6 +26,7 @@ https://github.com/user-attachments/assets/c9d19052-9928-48ae-929b-7644b8563f5d
 | **Overview** | KPI cards and monthly net revenue, orders or customers (chosen with a field parameter) against the same period of the previous year |
 | **Customers** | RFM segments: share of customers vs share of revenue, segment profile and key insights generated with DAX |
 | **Products** | Pareto curve, ABC classes and top 10 products |
+| **Product detail** | Drillthrough page: select a product in the top 10 and use the button (or right-click → Drill through) to see its KPIs, monthly revenue, ABC class and rank, and top countries |
 | **Geography** | UK share, top 15 international countries and the international share of revenue by month. Hovering over a country shows a tooltip page with its monthly revenue and top 5 products |
 | **International map** | Bubble map made with an R visual (ggplot2): net revenue and average order value by country |
 

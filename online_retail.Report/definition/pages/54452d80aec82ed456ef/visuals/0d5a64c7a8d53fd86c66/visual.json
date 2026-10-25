@@ -7,7 +7,7 @@
     "z": 2000,
     "height": 300,
     "width": 208,
-    "tabOrder": 3001
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "pageNavigator",
@@ -189,6 +189,19 @@
           },
           "selector": {
             "id": "press"
+          }
+        }
+      ],
+      "pages": [
+        {
+          "properties": {
+            "showHiddenPages": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
           }
         }
       ]

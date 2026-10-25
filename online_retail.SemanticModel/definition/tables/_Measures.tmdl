@@ -347,6 +347,31 @@ table _Measures
 		displayFolder: 7. Report
 		lineageTag: 63145c47-94d1-42db-b555-a06f8bc16cc2
 
+	measure 'Selected Product' =
+			
+			SELECTEDVALUE ( 'Product'[Description], "Several products" )
+			    & " · " & SELECTEDVALUE ( 'Product'[StockCode], "" )
+		displayFolder: 7. Report
+		lineageTag: 6003d8bd-946f-42eb-93b5-3be463e701e5
+
+	measure 'Selected Product Class' =
+			
+			"Class " & SELECTEDVALUE ( 'Product'[Pareto Class] )
+			    & " · rank " & FORMAT ( SELECTEDVALUE ( 'Product'[Revenue Rank] ), "#,0", "en-GB" )
+			    & " of " & FORMAT ( CALCULATE ( COUNTROWS ( 'Product' ), REMOVEFILTERS ( 'Product' ) ), "#,0", "en-GB" )
+		displayFolder: 7. Report
+		lineageTag: 261c471e-e2cf-4abc-ae34-a4a8ef80b687
+
+	measure 'Drillthrough Button Text' =
+			
+			IF (
+			    HASONEVALUE ( 'Product'[StockCode] ),
+			    "See detail: " & SELECTEDVALUE ( 'Product'[Description] ) & " →",
+			    "Select a product to see its detail"
+			)
+		displayFolder: 7. Report
+		lineageTag: 0a990a35-5411-4fe7-a0f1-7963cc999ee6
+
 	partition _Measures = m
 		mode: import
 		source =

@@ -6,7 +6,8 @@
     "y": 140,
     "z": 6000,
     "height": 300,
-    "width": 208
+    "width": 208,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "pageNavigator",
@@ -188,6 +189,19 @@
           },
           "selector": {
             "id": "press"
+          }
+        }
+      ],
+      "pages": [
+        {
+          "properties": {
+            "showHiddenPages": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
           }
         }
       ]

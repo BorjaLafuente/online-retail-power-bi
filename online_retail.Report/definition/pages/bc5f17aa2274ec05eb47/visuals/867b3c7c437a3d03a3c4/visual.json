@@ -4,10 +4,10 @@
   "position": {
     "x": 263.76055257099006,
     "y": 100.199539524175,
-    "z": 1001,
+    "z": 2000,
     "height": 979.892555640829,
     "width": 1652,
-    "tabOrder": 1001
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "scriptVisual",
@@ -225,34 +225,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "d11a15deb7564d7a6bae",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Revenue"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "b56c6e040ddf09fdb23e",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Average Order Value"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

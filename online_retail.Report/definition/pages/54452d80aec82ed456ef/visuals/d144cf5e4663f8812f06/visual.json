@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "d144cf5e4663f8812f06",
   "position": {
-    "x": 1121.350729086723,
-    "y": 549,
+    "x": 1121.4285714285716,
+    "y": 540,
     "z": 3000,
-    "height": 528.99462778204145,
-    "width": 794.228702993093,
+    "height": 538.57142857142856,
+    "width": 794.28571428571433,
     "tabOrder": 3000
   },
   "visual": {
@@ -252,6 +252,26 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right-click a product → Drill through for its detail'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "keepLayerOrder": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }

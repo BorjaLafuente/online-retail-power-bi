@@ -75,23 +75,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "2476ed1cfc32406dfc91",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Selected Country"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

@@ -4,10 +4,10 @@
   "position": {
     "x": 190,
     "y": 124.28571428571429,
-    "z": 3,
+    "z": 3000,
     "height": 195.71428571428572,
     "width": 190,
-    "tabOrder": 3
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "clusteredBarChart",
@@ -244,20 +244,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "3cbe6280215fd87479fa",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Revenue"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }
