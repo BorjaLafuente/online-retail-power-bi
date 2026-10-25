@@ -292,6 +292,12 @@ table _Measures
 
 		annotation PBI_FormatHint = {"isCustom":true}
 
+	measure 'Selected Country' =
+			
+			SELECTEDVALUE ( Sales[Country], "Several countries" )
+		displayFolder: 5. Geography
+		lineageTag: 22a21720-308f-4f67-a042-e6ccc859979e
+
 	partition _Measures = m
 		mode: import
 		source =
