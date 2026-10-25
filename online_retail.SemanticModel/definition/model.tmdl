@@ -18,6 +18,7 @@ ref table Product
 ref table Customer
 ref table Calendar
 ref table _Measures
+ref table Metric
 
 ref cultureInfo es-ES
 

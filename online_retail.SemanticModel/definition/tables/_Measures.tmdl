@@ -298,6 +298,55 @@ table _Measures
 		displayFolder: 5. Geography
 		lineageTag: 22a21720-308f-4f67-a042-e6ccc859979e
 
+	measure 'Orders PY' =
+			
+			VAR PeriodPY =
+			    CALCULATETABLE ( SAMEPERIODLASTYEAR ( Calendar[Date] ), Calendar[Date With Sales] = TRUE () )
+			VAR FirstSalesDate = CALCULATE ( MIN ( Sales[Date] ), REMOVEFILTERS () )
+			RETURN
+			    IF ( MINX ( PeriodPY, Calendar[Date] ) >= FirstSalesDate, CALCULATE ( [Orders], PeriodPY ) )
+		formatString: 0
+		displayFolder: 2. Time intelligence
+		lineageTag: ad2447c6-91a9-4f55-ac79-7c684c2fe571
+
+	measure 'Customers PY' =
+			
+			VAR PeriodPY =
+			    CALCULATETABLE ( SAMEPERIODLASTYEAR ( Calendar[Date] ), Calendar[Date With Sales] = TRUE () )
+			VAR FirstSalesDate = CALCULATE ( MIN ( Sales[Date] ), REMOVEFILTERS () )
+			RETURN
+			    IF ( MINX ( PeriodPY, Calendar[Date] ) >= FirstSalesDate, CALCULATE ( [Customers], PeriodPY ) )
+		formatString: 0
+		displayFolder: 2. Time intelligence
+		lineageTag: 7dd3e5cb-3bc4-46ab-bed5-3165f43da45b
+
+	measure 'Selected Metric PY' =
+			
+			SWITCH (
+			    SELECTEDVALUE ( Metric[Metric Order] ),
+			    0, [Revenue PY],
+			    1, [Orders PY],
+			    2, [Customers PY]
+			)
+		displayFolder: 2. Time Intelligence
+		lineageTag: f9b2a7a6-694b-4bc5-8143-891414e4f6fb
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Overview Chart Title' =
+			
+			"Monthly "
+			    & SWITCH (
+			        SELECTEDVALUE ( Metric[Metric Order] ),
+			        0, "net revenue",
+			        1, "orders",
+			        2, "customers",
+			        "net revenue"
+			    )
+			    & " vs previous year"
+		displayFolder: 7. Report
+		lineageTag: 63145c47-94d1-42db-b555-a06f8bc16cc2
+
 	partition _Measures = m
 		mode: import
 		source =

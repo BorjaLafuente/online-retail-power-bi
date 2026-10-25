@@ -2,9 +2,9 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "633090d2e11a8ba85e9c",
   "position": {
-    "x": 263.3497536945813,
-    "y": 234.0886699507389,
-    "z": 5000,
+    "x": 268.57142857142861,
+    "y": 234.28571428571431,
+    "z": 2000,
     "height": 845.9113300492611,
     "width": 1651.9211822660097,
     "tabOrder": 3000
@@ -42,12 +42,12 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Revenue"
+                  "Property": "Customers"
                 }
               },
-              "queryRef": "_Measures.Revenue",
-              "nativeQueryRef": "Net revenue",
-              "displayName": "Net revenue"
+              "queryRef": "_Measures.Customers",
+              "nativeQueryRef": "Customers",
+              "displayName": "Customers"
             },
             {
               "field": {
@@ -57,12 +57,28 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Revenue PY"
+                  "Property": "Selected Metric PY"
                 }
               },
-              "queryRef": "_Measures.Revenue PY",
+              "queryRef": "_Measures.Selected Metric PY",
               "nativeQueryRef": "Previous year",
               "displayName": "Previous year"
+            }
+          ],
+          "fieldParameters": [
+            {
+              "parameterExpr": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Metric"
+                    }
+                  },
+                  "Property": "Metric"
+                }
+              },
+              "index": 0,
+              "length": 1
             }
           ]
         }
@@ -109,74 +125,27 @@
       "lineStyles": [
         {
           "properties": {
+            "lineChartType": {
+              "expr": {
+                "Literal": {
+                  "Value": "'linear'"
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
             "lineStyle": {
               "expr": {
                 "Literal": {
                   "Value": "'dashed'"
                 }
               }
-            },
-            "lineChartType": {
-              "expr": {
-                "Literal": {
-                  "Value": "'linear'"
-                }
-              }
             }
           },
           "selector": {
-            "metadata": "_Measures.Revenue PY"
-          }
-        },
-        {
-          "properties": {
-            "lineChartType": {
-              "expr": {
-                "Literal": {
-                  "Value": "'linear'"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "dataPoint": [
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": -0.5
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Measures.Revenue PY"
-          }
-        },
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 2,
-                      "Percent": 0
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Measures.Revenue"
+            "metadata": "_Measures.Selected Metric PY"
           }
         }
       ],
@@ -227,8 +196,13 @@
           "properties": {
             "text": {
               "expr": {
-                "Literal": {
-                  "Value": "'Monthly net revenue vs previous year'"
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Overview Chart Title"
                 }
               }
             },
@@ -261,8 +235,53 @@
             }
           }
         }
+      ],
+      "general": [
+        {
+          "properties": {
+            "keepLayerOrder": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "89ce35a8e865ef9901e2",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Calendar"
+              }
+            },
+            "Property": "Year Month"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "053fb4934a79036e7beb",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Selected Metric PY"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }
