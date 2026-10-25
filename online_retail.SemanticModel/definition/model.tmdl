@@ -11,7 +11,7 @@ annotation __PBI_TimeIntelligenceEnabled = 0
 
 annotation PBI_ProTooling = ["DevMode","DaxQueryView_Desktop"]
 
-annotation PBI_QueryOrder = ["Year 2009-2010","Year 2010-2011","Sales","Product","Customer","_Measures"]
+annotation PBI_QueryOrder = ["Year 2009-2010","Year 2010-2011","Sales","Product","Customer","_Measures","SourceFile"]
 
 ref table Sales
 ref table Product

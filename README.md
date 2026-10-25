@@ -94,7 +94,7 @@ Measures are grouped in display folders: Sales, Time intelligence, Customers, Pr
 Requires Power BI Desktop (no Power BI account needed).
 
 1. Download [Online Retail II](https://doi.org/10.24432/C5CG6D) and save it as `data/online_retail_II.xlsx`.
-2. Open `online_retail.pbip`. If the data does not load, go to **Transform data**, select the `Year 2009-2010` and `Year 2010-2011` queries and update the file path in their **Source** step.
+2. Open `online_retail.pbip`. If the data does not load, go to **Home → Transform data → Edit parameters** and set **SourceFile** to the full path of the Excel file.
 3. The **International map** page is an R visual. It needs R and the packages `ggplot2`, `dplyr`, `sf`, `rnaturalearth`, `rnaturalearthdata`, `countrycode` and `scales`. The rest of the report works without R.
 
 ## Project structure

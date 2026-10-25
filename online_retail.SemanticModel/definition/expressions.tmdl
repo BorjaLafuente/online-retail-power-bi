@@ -1,6 +1,6 @@
 expression 'Year 2009-2010' =
 		let
-		  Origen = Excel.Workbook(File.Contents("C:\Users\Usuario\Documents\github\online-retail-power-bi\data\online_retail_II.xlsx"), null, true),
+		  Origen = Excel.Workbook(File.Contents(SourceFile), null, true),
 		  #"Navegación 1" = Origen{[Item = "Year 2009-2010", Kind = "Sheet"]}[Data],
 		  #"Encabezados promovidos" = Table.PromoteHeaders(#"Navegación 1", [PromoteAllScalars = true]),
 		  #"Tipo de columna cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos", {{"Description", type text}, {"Quantity", Int64.Type}, {"InvoiceDate", type datetime}, {"Price", type number}, {"Customer ID", type text}, {"Country", type text}, {"Invoice", type text}, {"StockCode", type text}}, "es"),
@@ -13,7 +13,7 @@ expression 'Year 2009-2010' =
 
 expression 'Year 2010-2011' =
 		let
-		  Origen = Excel.Workbook(File.Contents("C:\Users\Usuario\Documents\github\online-retail-power-bi\data\online_retail_II.xlsx"), null, true),
+		  Origen = Excel.Workbook(File.Contents(SourceFile), null, true),
 		  #"Navegación 1" = Origen{[Item = "Year 2010-2011", Kind = "Sheet"]}[Data],
 		  #"Encabezados promovidos" = Table.PromoteHeaders(#"Navegación 1", [PromoteAllScalars = true]),
 		  #"Tipo de columna cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos", {{"Description", type text}, {"Quantity", Int64.Type}, {"InvoiceDate", type datetime}, {"Price", type number}, {"Customer ID", type text}, {"Country", type text}, {"Invoice", type text}, {"StockCode", type text}}, "es")
@@ -22,4 +22,14 @@ expression 'Year 2010-2011' =
 	lineageTag: 556d4bcb-8350-4218-bb53-cf388dc03f14
 
 	annotation PBI_ResultType = Table
+
+/// Full path to online_retail_II.xlsx
+expression SourceFile =
+		let
+		    Source = "C:\Users\Usuario\Documents\github\online-retail-power-bi\data\online_retail_II.xlsx" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = type text]
+		in
+		    Source
+	lineageTag: efc82a65-398c-4bff-a607-f71929f6f8d4
+
+	annotation PBI_ResultType = Text
 
