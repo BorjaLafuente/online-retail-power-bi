@@ -8,7 +8,7 @@ The report covers sales trends, customer segmentation (RFM), product concentrati
 
 ## Demo
 
-https://github.com/user-attachments/assets/c9d19052-9928-48ae-929b-7644b8563f5d
+https://github.com/user-attachments/assets/79ef52ca-e2f2-4e31-acad-c77150173697
 
 ## Key findings
 
