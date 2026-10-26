@@ -3223,6 +3223,16 @@ cultureInfo es-ES
 			            },
 			            "Weight": 0.9
 			          }
+			        },
+			        {
+			          "Avg order": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -6853,9 +6863,817 @@ cultureInfo es-ES
 			          }
 			        }
 			      ]
+			    },
+			    "entity__measure.selected_product": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "Selected Product"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "selected product": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "selected artifact": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "selected item": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "selected merchandise": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "selected produce": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.selected_product_class": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "Selected Product Class"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "selected product class": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "class": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "product class": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "selected product classification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "selected product category": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "selected product genre": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "product classification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "product category": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "product genre": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "selected product course": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "selected product grade": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "selected product lecture": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "selected product lesson": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.drillthrough_button_text": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "Drillthrough Button Text"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "drillthrough button text": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "drillthrough button manuscript": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "drillthrough button transcript": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "drillthrough button typescript": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "drillthrough button edition": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "drillthrough button version": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "drillthrough button writing": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "drillthrough button script": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "drillthrough button copy": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "drillthrough button schoolbook": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "drillthrough button reader": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
+			    "product_has_entity__measure_selected_product": {
+			      "Binding": {
+			        "ConceptualEntity": "Product"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "product": {
+			          "Target": {
+			            "Entity": "product"
+			          }
+			        },
+			        "entity__measure.selected_product": {
+			          "Target": {
+			            "Entity": "entity__measure.selected_product"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "product"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.selected_product"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "products_have_selected_product"
+			        }
+			      ]
+			    },
+			    "metric_has_metric": {
+			      "Binding": {
+			        "ConceptualEntity": "Metric"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "metric": {
+			          "Target": {
+			            "Entity": "metric"
+			          }
+			        },
+			        "metric.metric": {
+			          "Target": {
+			            "Entity": "metric.metric"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "metric"
+			            },
+			            "Object": {
+			              "Role": "metric.metric"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "metrics_have_metrics"
+			        },
+			        {
+			          "Name": {
+			            "Subject": {
+			              "Role": "metric"
+			            },
+			            "Name": {
+			              "Role": "metric.metric"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "metrics_are_names_IDs_of_metrics"
+			        }
+			      ]
+			    },
+			    "metric_has_entity__measure_overview_chart_title": {
+			      "Binding": {
+			        "ConceptualEntity": "Metric"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "metric": {
+			          "Target": {
+			            "Entity": "metric"
+			          }
+			        },
+			        "entity__measure.overview_chart_title": {
+			          "Target": {
+			            "Entity": "entity__measure.overview_chart_title"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "metric"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.overview_chart_title"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "metrics_have_overview_chart_title"
+			        }
+			      ]
+			    },
+			    "sale_has_entity__measure_selected_metric_PY": {
+			      "Binding": {
+			        "ConceptualEntity": "Sales"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "sale": {
+			          "Target": {
+			            "Entity": "sale"
+			          }
+			        },
+			        "entity__measure.selected_metric_PY": {
+			          "Target": {
+			            "Entity": "entity__measure.selected_metric_PY"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "sale"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.selected_metric_PY"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "sales_have_selected_metric_PY"
+			        }
+			      ]
+			    },
+			    "metric_has_entity__measure_selected_metric_PY": {
+			      "Binding": {
+			        "ConceptualEntity": "Metric"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "metric": {
+			          "Target": {
+			            "Entity": "metric"
+			          }
+			        },
+			        "entity__measure.selected_metric_PY": {
+			          "Target": {
+			            "Entity": "entity__measure.selected_metric_PY"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "metric"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.selected_metric_PY"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "metrics_have_selected_metric_PY"
+			        }
+			      ]
+			    },
+			    "calendar_has_entity__measure_selected_metric_PY": {
+			      "Binding": {
+			        "ConceptualEntity": "Calendar"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "calendar": {
+			          "Target": {
+			            "Entity": "calendar"
+			          }
+			        },
+			        "entity__measure.selected_metric_PY": {
+			          "Target": {
+			            "Entity": "entity__measure.selected_metric_PY"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendar"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.selected_metric_PY"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "calendars_have_selected_metric_PY"
+			        }
+			      ]
+			    },
+			    "sale_has_entity__measure_customers_PY": {
+			      "Binding": {
+			        "ConceptualEntity": "Sales"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "sale": {
+			          "Target": {
+			            "Entity": "sale"
+			          }
+			        },
+			        "entity__measure.customers_PY": {
+			          "Target": {
+			            "Entity": "entity__measure.customers_PY"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "sale"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.customers_PY"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "sales_have_customers_PY"
+			        }
+			      ]
+			    },
+			    "calendar_has_entity__measure_customers_PY": {
+			      "Binding": {
+			        "ConceptualEntity": "Calendar"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "calendar": {
+			          "Target": {
+			            "Entity": "calendar"
+			          }
+			        },
+			        "entity__measure.customers_PY": {
+			          "Target": {
+			            "Entity": "entity__measure.customers_PY"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendar"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.customers_PY"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "calendars_have_customers_PY"
+			        }
+			      ]
+			    },
+			    "sale_has_entity__measure_orders_PY": {
+			      "Binding": {
+			        "ConceptualEntity": "Sales"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "sale": {
+			          "Target": {
+			            "Entity": "sale"
+			          }
+			        },
+			        "entity__measure.orders_PY": {
+			          "Target": {
+			            "Entity": "entity__measure.orders_PY"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "sale"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.orders_PY"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "sales_have_orders_PY"
+			        }
+			      ]
+			    },
+			    "calendar_has_entity__measure_orders_PY": {
+			      "Binding": {
+			        "ConceptualEntity": "Calendar"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "calendar": {
+			          "Target": {
+			            "Entity": "calendar"
+			          }
+			        },
+			        "entity__measure.orders_PY": {
+			          "Target": {
+			            "Entity": "entity__measure.orders_PY"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendar"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.orders_PY"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "calendars_have_orders_PY"
+			        }
+			      ]
+			    },
+			    "sale_has_entity__measure_selected_country": {
+			      "Binding": {
+			        "ConceptualEntity": "Sales"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "sale": {
+			          "Target": {
+			            "Entity": "sale"
+			          }
+			        },
+			        "entity__measure.selected_country": {
+			          "Target": {
+			            "Entity": "entity__measure.selected_country"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "sale"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.selected_country"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "sales_have_selected_country"
+			        }
+			      ]
+			    },
+			    "calendar_has_month_start": {
+			      "Binding": {
+			        "ConceptualEntity": "Calendar"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "calendar": {
+			          "Target": {
+			            "Entity": "calendar"
+			          }
+			        },
+			        "calendar.month_start": {
+			          "Target": {
+			            "Entity": "calendar.month_start"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendar"
+			            },
+			            "Object": {
+			              "Role": "calendar.month_start"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "calendars_have_month_starts"
+			        }
+			      ]
+			    },
+			    "sale_has_entity__measure_international_revenue_share": {
+			      "Binding": {
+			        "ConceptualEntity": "Sales"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "sale": {
+			          "Target": {
+			            "Entity": "sale"
+			          }
+			        },
+			        "entity__measure.international_revenue_share": {
+			          "Target": {
+			            "Entity": "entity__measure.international_revenue_share"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "sale"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.international_revenue_share"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "sales_have_international_revenue_share"
+			        }
+			      ]
+			    },
+			    "product_has_product_rank_bin": {
+			      "Binding": {
+			        "ConceptualEntity": "Product"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "product": {
+			          "Target": {
+			            "Entity": "product"
+			          }
+			        },
+			        "product.product_rank_bin": {
+			          "Target": {
+			            "Entity": "product.product_rank_bin"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "product"
+			            },
+			            "Object": {
+			              "Role": "product.product_rank_bin"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "products_have_product_rank_bins"
+			        }
+			      ]
+			    },
+			    "sale_has_entity__measure_countries": {
+			      "Binding": {
+			        "ConceptualEntity": "Sales"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "sale": {
+			          "Target": {
+			            "Entity": "sale"
+			          }
+			        },
+			        "entity__measure.countries": {
+			          "Target": {
+			            "Entity": "entity__measure.countries"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "sale"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.countries"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "sales_have_countries"
+			        }
+			      ]
+			    },
 			    "sale_has_entity__measure_UK_revenue": {
 			      "Binding": {
 			        "ConceptualEntity": "Sales"
@@ -8793,7 +9611,7 @@ cultureInfo es-ES
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "sales_have_countries"
+			          "ID": "sales_have_countries1"
 			        }
 			      ]
 			    },
@@ -9175,86 +9993,7 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "metric_is_named_metric": {
-			      "Binding": {
-			        "ConceptualEntity": "Metric"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "metric": {
-			          "Target": {
-			            "Entity": "metric"
-			          }
-			        },
-			        "metric.metric": {
-			          "Target": {
-			            "Entity": "metric.metric"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Name": {
-			            "Subject": {
-			              "Role": "metric"
-			            },
-			            "Name": {
-			              "Role": "metric.metric"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "metrics_are_names_IDs_of_metrics"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "metric"
-			            },
-			            "Object": {
-			              "Role": "metric.metric"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "metrics_have_metrics"
-			        }
-			      ]
-			    },
-			    "sale_has_entity__measure_countries": {
-			      "Binding": {
-			        "ConceptualEntity": "Sales"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "sale": {
-			          "Target": {
-			            "Entity": "sale"
-			          }
-			        },
-			        "entity__measure.countries": {
-			          "Target": {
-			            "Entity": "entity__measure.countries"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "sale"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.countries"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "sales_have_countries1"
-			        }
-			      ]
-			    },
-			    "product_has_product_rank_bin": {
+			    "product_has_entity__measure_selected_product_class": {
 			      "Binding": {
 			        "ConceptualEntity": "Product"
 			      },
@@ -9265,9 +10004,9 @@ cultureInfo es-ES
 			            "Entity": "product"
 			          }
 			        },
-			        "product.product_rank_bin": {
+			        "entity__measure.selected_product_class": {
 			          "Target": {
-			            "Entity": "product.product_rank_bin"
+			            "Entity": "entity__measure.selected_product_class"
 			          }
 			        }
 			      },
@@ -9278,29 +10017,29 @@ cultureInfo es-ES
 			              "Role": "product"
 			            },
 			            "Object": {
-			              "Role": "product.product_rank_bin"
+			              "Role": "entity__measure.selected_product_class"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "products_have_product_rank_bins"
+			          "ID": "products_have_selected_product_class"
 			        }
 			      ]
 			    },
-			    "sale_has_entity__measure_international_revenue_share": {
+			    "product_has_entity__measure_drillthrough_button_text": {
 			      "Binding": {
-			        "ConceptualEntity": "Sales"
+			        "ConceptualEntity": "Product"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "sale": {
+			        "product": {
 			          "Target": {
-			            "Entity": "sale"
+			            "Entity": "product"
 			          }
 			        },
-			        "entity__measure.international_revenue_share": {
+			        "entity__measure.drillthrough_button_text": {
 			          "Target": {
-			            "Entity": "entity__measure.international_revenue_share"
+			            "Entity": "entity__measure.drillthrough_button_text"
 			          }
 			        }
 			      },
@@ -9308,345 +10047,15 @@ cultureInfo es-ES
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "sale"
+			              "Role": "product"
 			            },
 			            "Object": {
-			              "Role": "entity__measure.international_revenue_share"
+			              "Role": "entity__measure.drillthrough_button_text"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "sales_have_international_revenue_share"
-			        }
-			      ]
-			    },
-			    "calendar_has_month_start": {
-			      "Binding": {
-			        "ConceptualEntity": "Calendar"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "calendar": {
-			          "Target": {
-			            "Entity": "calendar"
-			          }
-			        },
-			        "calendar.month_start": {
-			          "Target": {
-			            "Entity": "calendar.month_start"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "calendar"
-			            },
-			            "Object": {
-			              "Role": "calendar.month_start"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "calendars_have_month_starts"
-			        }
-			      ]
-			    },
-			    "sale_has_entity__measure_selected_country": {
-			      "Binding": {
-			        "ConceptualEntity": "Sales"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "sale": {
-			          "Target": {
-			            "Entity": "sale"
-			          }
-			        },
-			        "entity__measure.selected_country": {
-			          "Target": {
-			            "Entity": "entity__measure.selected_country"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "sale"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.selected_country"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "sales_have_selected_country"
-			        }
-			      ]
-			    },
-			    "calendar_has_entity__measure_orders_PY": {
-			      "Binding": {
-			        "ConceptualEntity": "Calendar"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "calendar": {
-			          "Target": {
-			            "Entity": "calendar"
-			          }
-			        },
-			        "entity__measure.orders_PY": {
-			          "Target": {
-			            "Entity": "entity__measure.orders_PY"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "calendar"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.orders_PY"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "calendars_have_orders_PY"
-			        }
-			      ]
-			    },
-			    "sale_has_entity__measure_orders_PY": {
-			      "Binding": {
-			        "ConceptualEntity": "Sales"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "sale": {
-			          "Target": {
-			            "Entity": "sale"
-			          }
-			        },
-			        "entity__measure.orders_PY": {
-			          "Target": {
-			            "Entity": "entity__measure.orders_PY"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "sale"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.orders_PY"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "sales_have_orders_PY"
-			        }
-			      ]
-			    },
-			    "calendar_has_entity__measure_customers_PY": {
-			      "Binding": {
-			        "ConceptualEntity": "Calendar"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "calendar": {
-			          "Target": {
-			            "Entity": "calendar"
-			          }
-			        },
-			        "entity__measure.customers_PY": {
-			          "Target": {
-			            "Entity": "entity__measure.customers_PY"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "calendar"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.customers_PY"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "calendars_have_customers_PY"
-			        }
-			      ]
-			    },
-			    "sale_has_entity__measure_customers_PY": {
-			      "Binding": {
-			        "ConceptualEntity": "Sales"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "sale": {
-			          "Target": {
-			            "Entity": "sale"
-			          }
-			        },
-			        "entity__measure.customers_PY": {
-			          "Target": {
-			            "Entity": "entity__measure.customers_PY"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "sale"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.customers_PY"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "sales_have_customers_PY"
-			        }
-			      ]
-			    },
-			    "calendar_has_entity__measure_selected_metric_PY": {
-			      "Binding": {
-			        "ConceptualEntity": "Calendar"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "calendar": {
-			          "Target": {
-			            "Entity": "calendar"
-			          }
-			        },
-			        "entity__measure.selected_metric_PY": {
-			          "Target": {
-			            "Entity": "entity__measure.selected_metric_PY"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "calendar"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.selected_metric_PY"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "calendars_have_selected_metric_PY"
-			        }
-			      ]
-			    },
-			    "metric_has_entity__measure_selected_metric_PY": {
-			      "Binding": {
-			        "ConceptualEntity": "Metric"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "metric": {
-			          "Target": {
-			            "Entity": "metric"
-			          }
-			        },
-			        "entity__measure.selected_metric_PY": {
-			          "Target": {
-			            "Entity": "entity__measure.selected_metric_PY"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "metric"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.selected_metric_PY"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "metrics_have_selected_metric_PY"
-			        }
-			      ]
-			    },
-			    "sale_has_entity__measure_selected_metric_PY": {
-			      "Binding": {
-			        "ConceptualEntity": "Sales"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "sale": {
-			          "Target": {
-			            "Entity": "sale"
-			          }
-			        },
-			        "entity__measure.selected_metric_PY": {
-			          "Target": {
-			            "Entity": "entity__measure.selected_metric_PY"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "sale"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.selected_metric_PY"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "sales_have_selected_metric_PY"
-			        }
-			      ]
-			    },
-			    "metric_has_entity__measure_overview_chart_title": {
-			      "Binding": {
-			        "ConceptualEntity": "Metric"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "metric": {
-			          "Target": {
-			            "Entity": "metric"
-			          }
-			        },
-			        "entity__measure.overview_chart_title": {
-			          "Target": {
-			            "Entity": "entity__measure.overview_chart_title"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "metric"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.overview_chart_title"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "metrics_have_overview_chart_title"
+			          "ID": "products_have_drillthrough_button_text"
 			        }
 			      ]
 			    },

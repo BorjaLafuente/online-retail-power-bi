@@ -35,7 +35,9 @@ https://github.com/user-attachments/assets/c9d19052-9928-48ae-929b-7644b8563f5d
 
 ![Customers](docs/screenshots/customers.png)
 ![Products](docs/screenshots/products.png)
+![Product detail (drillthrough)](docs/screenshots/product-detail.png)
 ![Geography](docs/screenshots/geography.png)
+![Country tooltip](docs/screenshots/geography-tooltip.png)
 ![International map](docs/screenshots/international-map.png)
 
 </details>
@@ -61,6 +63,7 @@ Other checks and decisions:
 - **One description per product:** the most recent one, since some products were renamed during the period.
 - **Country** of the customer: the country of their latest purchase. `EIRE` and `RSA` are renamed to Ireland and South Africa.
 - **Two keyed-in errors** were found among the largest lines: orders of 80,995 and 74,215 units (£168K and £77K) cancelled within 20 minutes. They are why returns must be netted off revenue.
+- **The source path is a parameter** (`SourceFile`), so the report can point to the Excel file on any computer without editing the queries.
 
 ## Data model
 
@@ -74,13 +77,14 @@ Star schema with one fact table (`Sales`, one row per invoice line) and three di
 
 ## DAX
 
-Measures are grouped in display folders: Sales, Time intelligence, Customers, Products, Geography and Insights.
+Measures are grouped in display folders: Sales, Time intelligence, Customers, Products, Geography, Insights and Report.
 
 - **Net revenue** = gross revenue − returns. The sales filter lives inside each base measure, so no visual can bypass it.
 - **Previous year** compares only periods that have data in both years. 2011 is compared with 1 Jan–9 Dec 2010, and no comparison is shown when the previous period starts before the data does.
 - **RFM** is computed as calculated columns on `Customer` (a snapshot at 9 Dec 2011). Recency and monetary scores are quintiles with `RANKX`; frequency uses fixed thresholds (1, 2, 3–4, 5–9, 10+ orders) because 28% of customers have a single order and quintiles cannot split ties. Segments use recency and frequency: the average monetary score rises from 1.5 to 4.8 across frequency scores, so monetary value is used to size the segments rather than to define them.
 - **Pareto** cumulative share is a calculated column (computed once at refresh). The curve is plotted in bins of 0.1% of the catalogue to avoid Power BI's automatic sampling of 4,725 points.
 - **Key insights** on the Customers page are DAX text measures, so the sentences update with the data.
+- **Interactivity**: a field parameter switches the Overview chart between revenue, orders and customers, with the previous-year line (`SWITCH` on the selected metric) and the chart title following the choice. The product detail page and the country tooltip use `SELECTEDVALUE` and `HASONEVALUE` for dynamic titles and the drillthrough button text.
 
 ### How the growth figure changed
 

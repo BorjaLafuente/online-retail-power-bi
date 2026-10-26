@@ -42,12 +42,12 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Customers"
+                  "Property": "Revenue"
                 }
               },
-              "queryRef": "_Measures.Customers",
-              "nativeQueryRef": "Customers",
-              "displayName": "Customers"
+              "queryRef": "_Measures.Revenue",
+              "nativeQueryRef": "Net revenue",
+              "displayName": "Net revenue"
             },
             {
               "field": {

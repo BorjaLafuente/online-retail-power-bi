@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "_Measures.Revenue",
-              "nativeQueryRef": "Revenue",
+              "nativeQueryRef": "Net revenue",
+              "displayName": "Net revenue",
               "format": "0"
             },
             {
@@ -56,7 +57,8 @@
                 }
               },
               "queryRef": "_Measures.Average Order Value",
-              "nativeQueryRef": "Average Order Value"
+              "nativeQueryRef": "Avg order",
+              "displayName": "Avg order"
             }
           ]
         }
